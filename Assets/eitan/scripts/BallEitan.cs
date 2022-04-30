@@ -80,4 +80,12 @@ public class BallEitan : MonoBehaviour
         
         previousVelocity = newVelocity;
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "target")
+        {
+            print("win");
+        }
+    }
 }
