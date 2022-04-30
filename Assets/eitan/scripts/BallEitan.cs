@@ -15,7 +15,7 @@ public class BallEitan : MonoBehaviour
 
     private void Awake()
     {
-        dir = transform.Find("direction").gameObject;
+        dir = transform.Find("Arrow").gameObject;
         rb = GetComponent<Rigidbody2D>();
         previousVelocity = rb.velocity;
     }
@@ -43,6 +43,7 @@ public class BallEitan : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 moving = false;
                 x = 0;
+                // Arrow.Activate();
             }
             else
             {
@@ -54,8 +55,8 @@ public class BallEitan : MonoBehaviour
     private void Hit()
     {
         // get direction
-        var velocity = Vector2.left;
-        // Vector3 velocity = Arrow.GetDirection();
+        // var velocity = Vector2.left;
+        Vector3 velocity = Arrow.GetDirection();
         // give initial velocity
         rb.velocity = velocity * initSpeed;
         moving = true;
@@ -86,6 +87,7 @@ public class BallEitan : MonoBehaviour
         if (other.name == "target")
         {
             print("win");
+            gameObject.SetActive(false);
         }
     }
 }

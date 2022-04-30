@@ -25,7 +25,7 @@ public class Arrow : MonoBehaviour
 
     public static Vector3 GetDirection()
     {
-        _instance.gameObject.SetActive(false);
+        Deactivate();
         return _instance.forward.position - _instance.backward.position;
     }
 
@@ -57,6 +57,7 @@ public class Arrow : MonoBehaviour
 
     private static void Deactivate()
     {
+        _instance._dir = 0f;
         _instance.gameObject.SetActive(false);
     }
 }
