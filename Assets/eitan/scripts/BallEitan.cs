@@ -43,7 +43,7 @@ public class BallEitan : MonoBehaviour
                 rb.velocity = Vector2.zero;
                 moving = false;
                 x = 0;
-                // Arrow.Activate();
+                Arrow.Activate();
             }
             else
             {
