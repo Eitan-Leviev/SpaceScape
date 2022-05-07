@@ -8,8 +8,8 @@ public class AddingItems : MonoBehaviour
     [SerializeField] private Vector2 itemsInitPos; 
     
     [SerializeField] private GameObject wall; // item code = 1 
-    [SerializeField] private GameObject magnet; // item code = 2
     [SerializeField] private GameObject ventilator; // item code = 3
+    [SerializeField] private GameObject magnet; // item code = 2
 
     // Start is called before the first frame update
     void Start()

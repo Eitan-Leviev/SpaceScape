@@ -6,11 +6,14 @@ using UnityEngine;
 public class BallEitan : MonoBehaviour
 {
     public static bool IsEditingBall = true;
-    
+
+    private Vector3 initPos;
+    private Quaternion initRotation;
+
     private GameObject dir;
     private Rigidbody2D rb;
     public float initSpeed = 10;
-    public float speed = 1;
+    // public float speed = 1;
     private float x = 0;
     private bool moving = false;
     private Vector2 previousVelocity;
@@ -20,6 +23,9 @@ public class BallEitan : MonoBehaviour
         dir = transform.Find("Arrow").gameObject;
         rb = GetComponent<Rigidbody2D>();
         previousVelocity = rb.velocity;
+
+        initPos = transform.position;
+        initRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -99,5 +105,14 @@ public class BallEitan : MonoBehaviour
     {
         print("j");
         RotateItems.cur = dir.transform;
+    }
+
+    public void ResetPlayer()
+    {
+        var t = transform;
+        t.position = initPos;
+        t.rotation = initRotation;
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
     }
 }
