@@ -26,29 +26,31 @@ public class BallEitan : MonoBehaviour
         previousVelocity = rb.velocity;
 
         // hit
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!moving && Input.GetKeyDown(KeyCode.Space))
         {
             Hit();
         }
 
         if (moving)
         {
-            // add to x
-            x += Time.deltaTime * speed;
-            var y = SlowDownFunc(x);
             // slow down ball
-            if (y <= 0)
-            {
-                print("stop moving");
-                rb.velocity = Vector2.zero;
-                moving = false;
-                x = 0;
-                Arrow.Activate();
-            }
-            else
-            {
-                rb.velocity = rb.velocity.normalized * (float) y;
-            }
+            
+            // // add to x
+            // x += Time.deltaTime * speed;
+            // var y = SlowDownFunc(x);
+            
+            // if (y <= 0)
+            // {
+            //     print("stop moving");
+            //     rb.velocity = Vector2.zero;
+            //     moving = false;
+            //     x = 0;
+            //     Arrow.Activate();
+            // }
+            // else
+            // {
+            //     rb.velocity = rb.velocity.normalized * (float) y;
+            // }
         }
     }
 
@@ -74,8 +76,8 @@ public class BallEitan : MonoBehaviour
         Vector2 contactNormal = contact.normal;
 
         Vector2 newVelocity = Vector2.Reflect(previousVelocity, contactNormal);
-        print(previousVelocity);
-        print(newVelocity);
+        // print(previousVelocity);
+        // print(newVelocity);
 
         rb.velocity = newVelocity;
         
