@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BallEitan : MonoBehaviour
 {
+    public static bool IsEditingBall = true;
+    
     private GameObject dir;
     private Rigidbody2D rb;
     public float initSpeed = 10;
@@ -91,5 +93,11 @@ public class BallEitan : MonoBehaviour
             print("win");
             gameObject.SetActive(false);
         }
+    }
+    
+    private void OnMouseDown()
+    {
+        print("j");
+        RotateItems.cur = dir.transform;
     }
 }

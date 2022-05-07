@@ -22,6 +22,10 @@ public class Arrow : MonoBehaviour
     
     private void Awake()
     {
+        
+        
+        RotateItems.cur = transform;
+        
         _instance = this;
     }
 
@@ -33,18 +37,18 @@ public class Arrow : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            _dir = -_turnSpeed;
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            _dir = _turnSpeed;
-        }
-        else
-        {
-            _dir = 0f;
-        }
+        // if (Input.GetKey(KeyCode.RightArrow))
+        // {
+        //     _dir = -_turnSpeed;
+        // }
+        // else if (Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     _dir = _turnSpeed;
+        // }
+        // else
+        // {
+        //     _dir = 0f;
+        // }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -53,10 +57,10 @@ public class Arrow : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
-    {
-        transform.Rotate(0,0,_dir * Time.fixedDeltaTime);
-    }
+    // private void FixedUpdate()
+    // {
+    //     CurrRotate.curr.Rotate(0,0,_dir * Time.fixedDeltaTime);
+    // }
 
     public static void Activate()
     {
