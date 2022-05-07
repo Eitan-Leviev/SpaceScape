@@ -25,11 +25,11 @@ public class BallEitan : MonoBehaviour
     {
         previousVelocity = rb.velocity;
 
-        // hit
-        if (!moving && Input.GetKeyDown(KeyCode.Space))
-        {
-            Hit();
-        }
+        // // hit
+        // if (!moving && Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     Hit();
+        // }
 
         if (moving)
         {
@@ -54,7 +54,7 @@ public class BallEitan : MonoBehaviour
         }
     }
 
-    private void Hit()
+    public void Hit()
     {
         // get direction
         // var velocity = Vector2.left;

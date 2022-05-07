@@ -18,7 +18,7 @@ public class Arrow : MonoBehaviour
     
     [SerializeField] private float _turnSpeed = 50f;
 
-    [SerializeField] private BallMoveCopy ball;
+    [SerializeField] private BallEitan ball;
     
     private void Awake()
     {
@@ -46,7 +46,7 @@ public class Arrow : MonoBehaviour
             _dir = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             gameObject.GetComponent<Animator>().SetTrigger("Shoot");
         }
