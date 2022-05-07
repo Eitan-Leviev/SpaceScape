@@ -13,10 +13,12 @@ public class Arrow : MonoBehaviour
     [SerializeField] private Transform backward;
 
     [SerializeField] private GameObject pointer;
-
+    
     private float _dir = 0f;
     
     [SerializeField] private float _turnSpeed = 50f;
+
+    [SerializeField] private BallMoveCopy ball;
     
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class Arrow : MonoBehaviour
 
     public static Vector3 GetDirection()
     {
-        Deactivate();
+        //Deactivate();
         return _instance.forward.position - _instance.backward.position;
     }
 
@@ -33,16 +35,22 @@ public class Arrow : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            _dir = _turnSpeed;
+            _dir = -_turnSpeed;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            _dir = -_turnSpeed;
+            _dir = _turnSpeed;
         }
         else
         {
             _dir = 0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+        }
+        
     }
 
     private void FixedUpdate()
@@ -59,5 +67,10 @@ public class Arrow : MonoBehaviour
     {
         _instance._dir = 0f;
         _instance.gameObject.SetActive(false);
+    }
+    
+    void Hit()
+    {
+        ball.Hit();
     }
 }
