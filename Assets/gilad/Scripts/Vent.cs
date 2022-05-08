@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Vent : MonoBehaviour
 {
+
+    [SerializeField] private float turnSpeed = 1f;
     [SerializeField] private float speed = 1f;
     // Start is called before the first frame update
 
@@ -40,5 +42,6 @@ public class Vent : MonoBehaviour
             _ball.gameObject.GetComponent<Rigidbody2D>().AddForce(normal);
 
         }
+        
     }
 }
