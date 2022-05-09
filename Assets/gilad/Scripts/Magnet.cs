@@ -37,8 +37,7 @@ public class Magnet : MonoBehaviour
         if (_ball != null)
         {
             var normal = (_ball.position - transform.position).normalized * speed;
-            _ball.position += normal;
-
+            _ball.gameObject.GetComponent<Rigidbody2D>().AddForce(normal);
         }
     }
 }

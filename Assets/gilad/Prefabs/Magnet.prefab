@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4370086466872710579}
   - component: {fileID: 5083241996196060023}
   - component: {fileID: 7455477504023355168}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b40d0ddbbbcfd3469b6fdf44a244623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 1
   speed: -1
 --- !u!114 &6963680502207441566
 MonoBehaviour:
@@ -269,4 +270,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1732e17084372e0459d20d1ec42b00ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -0.03
+  speed: -10
