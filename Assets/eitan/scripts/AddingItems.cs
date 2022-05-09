@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AddingItems : MonoBehaviour
 {
@@ -41,5 +42,10 @@ public class AddingItems : MonoBehaviour
                 break;
         }
         Instantiate(item, itemsInitPos, quaternion.identity);
+    }
+
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
