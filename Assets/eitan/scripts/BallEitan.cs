@@ -70,6 +70,8 @@ public class BallEitan : MonoBehaviour
         // give initial velocity
         rb.velocity = velocity * initSpeed;
         moving = true;
+        
+        
     }
 
     private double SlowDownFunc(float x)
