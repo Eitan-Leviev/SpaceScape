@@ -21,11 +21,13 @@ public class HitAndReset : MonoBehaviour
         print("On Hit");
         DragAndDrop.isActive = false;
         Zone.Activate();
+        AddingItems.IsActive = false;
     }
 
     public static void OnReset()
     {
         DragAndDrop.isActive = true;
         Zone.Deactivate();
+        AddingItems.IsActive = true;
     }
 }

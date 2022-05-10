@@ -12,10 +12,12 @@ public class AddingItems : MonoBehaviour
     [SerializeField] private GameObject ventilator; // item code = 3
     [SerializeField] private GameObject magnet; // item code = 2
 
+    public static bool IsActive = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        IsActive = true;
     }
 
     // Update is called once per frame
@@ -26,22 +28,26 @@ public class AddingItems : MonoBehaviour
 
     public void InstantiateItem(int itemCode)
     {
-        print("k");
-        
-        GameObject item = null;
-        switch (itemCode)
+        if(IsActive)
         {
-            case 1:
-                item = wall;
-                break;
-            case 2:
-                item = magnet;
-                break;
-            case 3:
-                item = ventilator;
-                break;
+            print("k");
+
+            GameObject item = null;
+            switch (itemCode)
+            {
+                case 1:
+                    item = wall;
+                    break;
+                case 2:
+                    item = magnet;
+                    break;
+                case 3:
+                    item = ventilator;
+                    break;
+            }
+
+            Instantiate(item, itemsInitPos, quaternion.identity);
         }
-        Instantiate(item, itemsInitPos, quaternion.identity);
     }
 
     public void ReloadScene()
