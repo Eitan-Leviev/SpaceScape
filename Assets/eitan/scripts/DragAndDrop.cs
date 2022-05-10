@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
 {
+    public static bool isActive = true;
     private GameObject obj;
-
     private bool isDragging = false;
     
     private void Awake()
@@ -18,26 +18,35 @@ public class DragAndDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // print(touch);
-
-        if (isDragging)
+        if(isActive)
         {
-            var t = transform;
-            t.position = new Vector3(touch.x, touch.y, t.position.z);
+            var touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // print(touch);
+
+            if (isDragging)
+            {
+                var t = transform;
+                t.position = new Vector3(touch.x, touch.y, t.position.z);
+            }
         }
     }
 
     private void OnMouseDown()
     {
-        print(1);
-        isDragging = true;
-        RotateItems.cur = transform;
+        if(isActive)
+        {
+            print(1);
+            isDragging = true;
+            RotateItems.cur = transform;
+        }
     }
     
     private void OnMouseUp()
     {
-        print(2);
-        isDragging = false;
+        if(isActive)
+        {
+            print(2);
+            isDragging = false;
+        }
     }
 }

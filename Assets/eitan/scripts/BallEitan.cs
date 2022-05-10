@@ -70,7 +70,7 @@ public class BallEitan : MonoBehaviour
         // give initial velocity
         rb.velocity = velocity * initSpeed;
         moving = true;
-        
+        HitAndReset.OnHit();
         
     }
 
@@ -116,5 +116,6 @@ public class BallEitan : MonoBehaviour
         t.rotation = initRotation;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
+        HitAndReset.OnReset();
     }
 }
