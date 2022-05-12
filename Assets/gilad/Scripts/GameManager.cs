@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     
     public static void PlaceHit(Vector3 pos)
     {
-        
         if (shared.Hits.Count == 0)
         {
             Instantiate(shared.hittEffectInst, pos, Quaternion.identity);
@@ -60,6 +59,4 @@ public class GameManager : MonoBehaviour
             nextHit.SetActive(true);
         }
     }
-    
-    
 }
