@@ -10,6 +10,10 @@ public class RotateItems : MonoBehaviour
     private float _dir = 0f;
     [SerializeField] private float _turnSpeed = 50f;
 
+
+    
+    
+
     private void Awake()
     {
         // cur = transform;
@@ -32,7 +36,16 @@ public class RotateItems : MonoBehaviour
         {
             _dir = 0f;
         }
-        
-        cur.Rotate(0,0,_dir * Time.fixedDeltaTime);
+
+        if(cur != null)
+        {
+            if (Input.GetKeyDown(KeyCode.Delete))
+            {
+                Destroy(cur.gameObject);
+                cur = null;
+                return;
+            }
+            cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);
+        }
     }
 }

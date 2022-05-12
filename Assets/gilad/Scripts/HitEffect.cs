@@ -5,7 +5,7 @@ using UnityEngine;
 public class HitEffect : MonoBehaviour
 {
 
-    private static LinkedList<GameObject> hits;
+    public static LinkedList<GameObject> Hits { get; set; }
 
     [SerializeField] private GameObject effect;
 
@@ -15,21 +15,21 @@ public class HitEffect : MonoBehaviour
     public static void PlaceHit(Vector3 pos)
     {
         GameObject nextHit = null;
-        if (hits.Count == 0)
+        if (Hits.Count == 0)
         {
             nextHit = Instantiate(Inst);
         }
         else
         {
-            nextHit = hits.First.Value;
-            hits.RemoveLast();
+            nextHit = Hits.First.Value;
+            Hits.RemoveLast();
         }
         nextHit.SetActive(true);
     }
 
     void Deactivate()
     {
-        hits.AddFirst(gameObject);
+        Hits.AddFirst(gameObject);
         gameObject.SetActive(false);
     }
 }
