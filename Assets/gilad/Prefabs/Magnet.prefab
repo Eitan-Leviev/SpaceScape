@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5083241996196060023}
   - component: {fileID: 7455477504023355168}
   - component: {fileID: 5843020509321051588}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -10
+  m_ForceMagnitude: -30
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0

@@ -52,6 +52,7 @@ public class AddingItems : MonoBehaviour
 
     public void ReloadScene()
     {
+        HitAndReset.OnReset();
         SceneManager.LoadScene(0);
     }
 }
