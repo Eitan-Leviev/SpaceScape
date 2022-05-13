@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     private static GameManager shared;
 
-    private LinkedList<GameObject> Hits;
+    private LinkedList<GameObject> Hits = new LinkedList<GameObject>();
 
     [SerializeField] private GameObject hittEffectInst;
     

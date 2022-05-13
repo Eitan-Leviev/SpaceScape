@@ -52,7 +52,8 @@ public class Arrow : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+            // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+            Hit();
         }
         
     }
