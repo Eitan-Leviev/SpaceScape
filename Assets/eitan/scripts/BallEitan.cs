@@ -100,14 +100,14 @@ public class BallEitan : MonoBehaviour
     {
         if (other.name == "target")
         {
-            print("win");
+            // print("win");
             gameObject.SetActive(false);
         }
     }
     
     private void OnMouseDown()
     {
-        print("j");
+        // print("j");
         RotateItems.cur = dir.transform;
     }
 

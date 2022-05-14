@@ -20,17 +20,11 @@ public class AddingItems : MonoBehaviour
         IsActive = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void InstantiateItem(int itemCode)
     {
         if(IsActive)
         {
-            print("k");
+            // print("k");
 
             GameObject item = null;
             switch (itemCode)

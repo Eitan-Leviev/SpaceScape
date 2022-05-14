@@ -11,7 +11,7 @@ public class DragAndDrop : MonoBehaviour
     
     private void Awake()
     {
-        print("awake");
+        // print("awake");
         RotateItems.cur = transform;
     }
 
@@ -35,7 +35,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if(isActive)
         {
-            print(1);
+            // print(1);
             isDragging = true;
             RotateItems.cur = transform;
         }
@@ -45,7 +45,7 @@ public class DragAndDrop : MonoBehaviour
     {
         if(isActive)
         {
-            print(2);
+            // print(2);
             isDragging = false;
         }
     }
