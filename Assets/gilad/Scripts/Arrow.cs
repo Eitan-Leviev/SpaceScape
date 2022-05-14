@@ -76,6 +76,8 @@ public class Arrow : MonoBehaviour
     
     void Hit()
     {
+        transform.Find("LAZER").gameObject.SetActive(false);
+        transform.Find("cannon").gameObject.SetActive(false);
         ball.Hit();
     }
 }
