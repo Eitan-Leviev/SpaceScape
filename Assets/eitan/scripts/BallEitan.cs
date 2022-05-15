@@ -116,6 +116,7 @@ public class BallEitan : MonoBehaviour
         var t = transform;
         transform.parent = dir.transform;
         dir.transform.Find("Lazer").gameObject.SetActive(true);
+        gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
         t.localPosition = initPos;
         t.localRotation = initRotation;
         rb.velocity = Vector2.zero;
