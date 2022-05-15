@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3b4af59d3803d4db73adf48f88b07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 15
+  initSpeed: 30
 --- !u!1 &42485455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,11 +4104,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3738944178632481319, guid: f73e300ee80adfe4fb421e15c7e066dd, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.12523
       objectReference: {fileID: 0}
     - target: {fileID: 3738944178632481319, guid: f73e300ee80adfe4fb421e15c7e066dd, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.12523
+      objectReference: {fileID: 0}
+    - target: {fileID: 3738944178632481319, guid: f73e300ee80adfe4fb421e15c7e066dd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.62615
       objectReference: {fileID: 0}
     - target: {fileID: 3738944178632481319, guid: f73e300ee80adfe4fb421e15c7e066dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4206,7 +4210,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.27
 --- !u!212 &1708743112
 SpriteRenderer:
   m_ObjectHideFlags: 0
