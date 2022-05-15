@@ -27,26 +27,50 @@ public class AddingItems : MonoBehaviour
             // print("k");
 
             GameObject item = null;
+            bool goodChoice = true;
             switch (itemCode)
             {
                 case 1:
-                    item = wall;
+                    if (GameManager.NumWalls-- > 0)
+                    {
+                        item = wall;
+                    }
+                    else goodChoice = false;
                     break;
                 case 2:
-                    item = magnet;
+                    if (GameManager.NumMagnets-- > 0)
+                    {
+                        item = magnet;
+                    }
+                    else goodChoice = false;
                     break;
                 case 3:
-                    item = ventilator;
+                    if (GameManager.NumVents-- > 0)
+                    {
+                        item = ventilator;
+                    }
+                    else goodChoice = false;
                     break;
             }
-
-            Instantiate(item, itemsInitPos, quaternion.identity);
+            if(goodChoice)
+            {
+                Instantiate(item, itemsInitPos, quaternion.identity);
+                ValuesManager.UpdateQuants();
+            }        
         }
     }
 
+    private bool TryToTake(int itemCode)
+    {
+        
+        return false;
+    }
+    
     public void ReloadScene()
     {
         HitAndReset.OnReset();
         SceneManager.LoadScene("game");
     }
+    
+    
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,29 +20,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int numVents = 3;
     
     
-    public int NumWalls
+    public static int NumWalls
     {
-        get => numWalls;
-        set => numWalls = value;
+        get => shared.numWalls;
+        set => shared.numWalls = Math.Max(value, 0);
     }
 
-    public int NumMagnets
+    public static int NumMagnets
     {
-        get => numMagnets;
-        set => numMagnets = value;
+        get => shared.numMagnets;
+        set => shared.numMagnets = Math.Max(value, 0);
     }
 
-    public int NumVents
+    public static int NumVents
     {
-        get => numVents;
-        set => numVents = value;
+        get => shared.numVents;
+        set => shared.numVents = Math.Max(value, 0);
     }
     // Start is called before the first frame update
     
     void Start()
     {
         shared = this;
-
+        ValuesManager.UpdateQuants();
         HitEffect.Hits = Hits;
     }
     

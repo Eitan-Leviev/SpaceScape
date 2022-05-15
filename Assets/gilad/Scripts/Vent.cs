@@ -6,8 +6,10 @@ using UnityEngine;
 public class Vent : MonoBehaviour
 {
 
-    [SerializeField] private float turnSpeed = 1f;
+    [SerializeField] private float turnSpeed = 0.01f;
     [SerializeField] private float speed = 1f;
+
+    private float _moveSpeed = 1f;
     // Start is called before the first frame update
 
     private Transform _ball = null;
@@ -26,6 +28,7 @@ public class Vent : MonoBehaviour
     {
         print("trigger enter");
         _ball = other.gameObject.transform;
+        _moveSpeed = _ball.GetComponent<BallEitan>().initSpeed * speed;
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -38,8 +41,16 @@ public class Vent : MonoBehaviour
     {
         if (_ball != null)
         {
-            var normal = (_ball.position - transform.position).normalized * speed;
-            _ball.gameObject.GetComponent<Rigidbody2D>().AddForce(normal);
+            var ballRB = _ball.gameObject.GetComponent<Rigidbody2D>();
+            
+            var normal = (_ball.position - transform.position);
+            if (normal.magnitude > Math.Abs(_moveSpeed))
+            {
+                normal = normal.normalized;
+            }
+            normal *= _moveSpeed;
+            var curVelocity = ballRB.velocity;
+            ballRB.velocity = Vector2.MoveTowards(curVelocity, normal, turnSpeed);
 
         }
         

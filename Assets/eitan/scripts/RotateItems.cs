@@ -39,10 +39,29 @@ public class RotateItems : MonoBehaviour
 
         if(cur != null)
         {
+            
             if (Input.GetKeyDown(KeyCode.Delete))
             {
+                if (cur.CompareTag("Ball"))
+                { // todo change to compere tag
+                    return;
+                }
+                print(cur.tag);
+                switch (cur.tag)
+                {
+                    case "Wall":
+                        GameManager.NumWalls++;
+                        break;
+                    case "Magnet":
+                        GameManager.NumMagnets++;
+                        break;
+                    case "Vent":
+                        GameManager.NumVents++;
+                        break;
+                }
                 Destroy(cur.gameObject);
                 cur = null;
+                ValuesManager.UpdateQuants();
                 return;
             }
             cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);

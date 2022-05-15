@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5843020509321051588}
   m_Layer: 8
   m_Name: Magnet
-  m_TagString: Untagged
+  m_TagString: Magnet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.043038785, y: 0.17215501}
   m_SpriteTilingProperty:
@@ -277,7 +277,7 @@ Transform:
   m_GameObject: {fileID: 7813713564303097237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 8953265759807581533}
   m_RootOrder: 0
@@ -344,7 +344,7 @@ CircleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -356,12 +356,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7813713564303097237}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b40d0ddbbbcfd3469b6fdf44a244623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 1
+  turnSpeed: 0.1
   speed: -1
 --- !u!114 &6963680502207441566
 MonoBehaviour:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1732e17084372e0459d20d1ec42b00ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -10
+  speed: -1
 --- !u!250 &1086988916402684931
 PointEffector2D:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ PointEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7813713564303097237}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
