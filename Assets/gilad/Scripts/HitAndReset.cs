@@ -10,6 +10,8 @@ public class HitAndReset : MonoBehaviour
         DragAndDrop.isActive = false;
         Zone.Activate();
         AddingItems.IsActive = false;
+        Arrow.IsActive = false;
+        RotateItems.cur = null;
     }
 
     public static void OnReset()
@@ -17,5 +19,6 @@ public class HitAndReset : MonoBehaviour
         DragAndDrop.isActive = true;
         Zone.Deactivate();
         AddingItems.IsActive = true;
+        Arrow.IsActive = true;
     }
 }

@@ -13,12 +13,21 @@ public class Arrow : MonoBehaviour
     [SerializeField] private Transform backward;
 
     
+    
     private float _dir = 0f;
     
     [SerializeField] private float _turnSpeed = 50f;
 
     [SerializeField] private BallEitan ball;
-    
+
+    private static bool isActive = true;
+
+    public static bool IsActive
+    {
+        get => isActive;
+        set => isActive = value;
+    }
+
     private void Awake()
     {
         
@@ -75,10 +84,13 @@ public class Arrow : MonoBehaviour
     
     void Hit()
     {
-        // transform.Find("LAZER").gameObject.SetActive(false);
-        transform.Find("Lazer").gameObject.SetActive(false);
-        ball.transform.SetParent(null);
-        ball.GetComponent<CircleCollider2D>().isTrigger = false;
-        ball.Hit();
+        if(isActive)
+        {
+            // transform.Find("LAZER").gameObject.SetActive(false);
+            transform.Find("Lazer").gameObject.SetActive(false);
+            ball.transform.SetParent(null);
+            ball.GetComponent<CircleCollider2D>().isTrigger = false;
+            ball.Hit();
+        }
     }
 }
