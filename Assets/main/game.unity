@@ -1217,7 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6840ee966efef504f9af27789fb5e260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turnSpeed: 50
+  _turnSpeed: 15
 --- !u!4 &141609352
 Transform:
   m_ObjectHideFlags: 0
@@ -4885,6 +4885,10 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 28571406}
+    - target: {fileID: 351845943567093713, guid: f73e300ee80adfe4fb421e15c7e066dd, type: 3}
+      propertyPath: _turnSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3738944178632481319, guid: f73e300ee80adfe4fb421e15c7e066dd, type: 3}
       propertyPath: m_RootOrder
       value: 1
