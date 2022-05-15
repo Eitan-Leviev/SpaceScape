@@ -64,6 +64,7 @@ public class BallEitan : MonoBehaviour
 
     public void Hit()
     {
+        GetComponent<AudioSource>().Play();
         // get direction
         // var velocity = Vector2.left;
         Vector3 velocity = Arrow.GetDirection();
