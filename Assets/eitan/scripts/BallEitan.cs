@@ -18,6 +18,10 @@ public class BallEitan : MonoBehaviour
     private bool moving = false;
     private Vector2 previousVelocity;
 
+    [SerializeField] private AudioSource bomb;
+    [SerializeField] private AudioSource moan;
+
+
     private void Awake()
     {
         dir = transform.parent.gameObject;
@@ -64,7 +68,9 @@ public class BallEitan : MonoBehaviour
 
     public void Hit()
     {
-        GetComponent<AudioSource>().Play();
+        moan.Play();
+        bomb.Play();
+        // GetComponent<AudioSource>().Play();
         // get direction
         // var velocity = Vector2.left;
         Vector3 velocity = Arrow.GetDirection();
@@ -102,6 +108,7 @@ public class BallEitan : MonoBehaviour
         if (other.name == "target")
         {
             GameManager.WinLevel();
+            gameObject.SetActive(false);
         }
     }
     
