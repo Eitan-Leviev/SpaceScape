@@ -12,7 +12,6 @@ public class Arrow : MonoBehaviour
     
     [SerializeField] private Transform backward;
 
-    [SerializeField] private GameObject pointer;
     
     private float _dir = 0f;
     
@@ -76,8 +75,10 @@ public class Arrow : MonoBehaviour
     
     void Hit()
     {
-        transform.Find("LAZER").gameObject.SetActive(false);
-        transform.Find("cannon").gameObject.SetActive(false);
+        // transform.Find("LAZER").gameObject.SetActive(false);
+        transform.Find("Lazer").gameObject.SetActive(false);
+        ball.transform.SetParent(null);
+        ball.GetComponent<CircleCollider2D>().isTrigger = false;
         ball.Hit();
     }
 }

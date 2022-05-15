@@ -20,12 +20,12 @@ public class BallEitan : MonoBehaviour
 
     private void Awake()
     {
-        dir = transform.Find("Arrow").gameObject;
+        dir = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
         previousVelocity = rb.velocity;
 
-        initPos = transform.position;
-        initRotation = transform.rotation;
+        initPos = transform.localPosition;
+        initRotation = transform.localRotation;
     }
 
     // Update is called once per frame
@@ -114,10 +114,13 @@ public class BallEitan : MonoBehaviour
     public void ResetPlayer()
     {
         var t = transform;
-        t.position = initPos;
-        t.rotation = initRotation;
+        transform.parent = dir.transform;
+        dir.transform.Find("Lazer").gameObject.SetActive(true);
+        t.localPosition = initPos;
+        t.localRotation = initRotation;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
+        
         HitAndReset.OnReset();
     }
 }
