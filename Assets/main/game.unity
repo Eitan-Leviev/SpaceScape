@@ -2911,6 +2911,7 @@ MonoBehaviour:
   numWalls: 3
   numMagnets: 1
   numVents: 4
+  transition: {fileID: 1231425249145087711, guid: d07cf37e37ddc4f418c4cc4a4dad0ea9, type: 3}
 --- !u!1 &827913420
 GameObject:
   m_ObjectHideFlags: 0

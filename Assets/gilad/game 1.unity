@@ -207,10 +207,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 28571404}
-  - component: {fileID: 28571403}
   - component: {fileID: 28571402}
   - component: {fileID: 28571405}
   - component: {fileID: 28571406}
+  - component: {fileID: 28571403}
   m_Layer: 3
   m_Name: ball
   m_TagString: Ball
@@ -275,11 +275,11 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fbe36e79e38f1fa4797b2ee17dd14f9c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.16, y: 2.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2466,6 +2466,7 @@ MonoBehaviour:
   numWalls: 3
   numMagnets: 3
   numVents: 3
+  transition: {fileID: 1231425249145087711, guid: d07cf37e37ddc4f418c4cc4a4dad0ea9, type: 3}
 --- !u!1 &827913420
 GameObject:
   m_ObjectHideFlags: 0

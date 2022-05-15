@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int numMagnets = 3;
     
     [SerializeField] private int numVents = 3;
+
+    [SerializeField] private GameObject transition;
     
     
     public static int NumWalls
@@ -59,5 +61,10 @@ public class GameManager : MonoBehaviour
             shared.Hits.RemoveLast();
             nextHit.SetActive(true);
         }
+    }
+
+    public static void WinLevel()
+    {
+        Instantiate(shared.transition, Vector3.back * 2, Quaternion.identity);
     }
 }
