@@ -82,7 +82,7 @@ public class Arrow : MonoBehaviour
         _instance.gameObject.SetActive(false);
     }
     
-    void Hit()
+    public void Hit()
     {
         if(isActive)
         {

@@ -26,12 +26,12 @@ public class RotateItems : MonoBehaviour
         
         if (Input.GetAxis( "Mouse ScrollWheel" ) > 0)
         {
-            print("R");
+            // print("R");
             _dir = -_turnSpeed;
         }
         else if (Input.GetAxis( "Mouse ScrollWheel" ) < 0)
         {
-            print("L");
+            // print("L");
             _dir = _turnSpeed;
         }
         else

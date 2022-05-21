@@ -134,6 +134,7 @@ public class BallEitan : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
         editModeObj.GetComponent<Animator>().SetTrigger("back");
+        RotateItems.cur = transform.parent;
         
         HitAndReset.OnReset();
     }
