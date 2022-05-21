@@ -16,6 +16,6 @@ public class Open : MonoBehaviour
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("game");
+        SceneManager.LoadScene("level 1");
     }
 }

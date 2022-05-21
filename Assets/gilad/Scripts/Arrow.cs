@@ -58,11 +58,11 @@ public class Arrow : MonoBehaviour
         //     _dir = 0f;
         // }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
-            Hit();
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+        //     Hit();
+        // }
         
     }
 
