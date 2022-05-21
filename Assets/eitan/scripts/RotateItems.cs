@@ -24,18 +24,35 @@ public class RotateItems : MonoBehaviour
     {
         // print(cur.parent.name);
         
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetAxis( "Mouse ScrollWheel" ) > 0)
         {
+            print("R");
             _dir = -_turnSpeed;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetAxis( "Mouse ScrollWheel" ) < 0)
         {
+            print("L");
             _dir = _turnSpeed;
         }
         else
         {
             _dir = 0f;
         }
+        
+        // if (Input.GetKey(KeyCode.RightArrow))
+        // {
+        //     print("R");
+        //     _dir = -_turnSpeed;
+        // }
+        // else if (Input.GetKey(KeyCode.LeftArrow))
+        // {
+        //     print("L");
+        //     _dir = _turnSpeed;
+        // }
+        // else
+        // {
+        //     _dir = 0f;
+        // }
 
         if(cur != null)
         {
