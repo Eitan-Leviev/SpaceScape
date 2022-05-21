@@ -21,9 +21,13 @@ public class BallEitan : MonoBehaviour
     [SerializeField] private AudioSource bomb;
     [SerializeField] private AudioSource moan;
 
+    private GameObject editModeObj;
+    
+
 
     private void Awake()
     {
+        editModeObj = GameObject.Find("grid");
         dir = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
         previousVelocity = rb.velocity;
@@ -70,6 +74,7 @@ public class BallEitan : MonoBehaviour
     {
         moan.Play();
         bomb.Play();
+        editModeObj.GetComponent<Animator>().SetTrigger("fade");
         // GetComponent<AudioSource>().Play();
         // get direction
         // var velocity = Vector2.left;
@@ -128,6 +133,7 @@ public class BallEitan : MonoBehaviour
         t.localRotation = initRotation;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
+        editModeObj.GetComponent<Animator>().SetTrigger("back");
         
         HitAndReset.OnReset();
     }
