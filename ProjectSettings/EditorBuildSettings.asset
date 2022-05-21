@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/main/open.unity
     guid: 8a56c1b02e5ea8c4db19d8a1d07676ce
   - enabled: 1
-    path: Assets/main/game.unity
+    path: Assets/main/level 1.unity
+    guid: 6206db5c9f2acb040965040dd9d6ac96
+  - enabled: 1
+    path: Assets/main/level 2.unity
     guid: 6e62ab67657136243ae4e1428cb3ffc2
   m_configObjects: {}

@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
+    public static int Level = 1;
 
     private static GameManager shared;
 

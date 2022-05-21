@@ -11,6 +11,7 @@ public class TransitionMnager : MonoBehaviour
     public void ReloadScene()
     {
         HitAndReset.OnReset();
-        SceneManager.LoadScene("game");
+        SceneManager.LoadScene($"level {GameManager.Level}");
+        // SceneManager.LoadScene("game");
     }
 }

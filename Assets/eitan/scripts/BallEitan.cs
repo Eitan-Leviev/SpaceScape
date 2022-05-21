@@ -112,6 +112,7 @@ public class BallEitan : MonoBehaviour
     {
         if (other.name == "target")
         {
+            GameManager.Level++;
             GameManager.WinLevel();
             gameObject.SetActive(false);
         }
