@@ -69,7 +69,7 @@ public class AddingItems : MonoBehaviour
     public void ReloadScene()
     {
         HitAndReset.OnReset();
-        SceneManager.LoadScene("game");
+        SceneManager.LoadScene($"level {GameManager.Level}");
     }
     
     

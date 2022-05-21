@@ -12,7 +12,7 @@ public class BallEitan : MonoBehaviour
 
     private GameObject dir;
     private Rigidbody2D rb;
-    public float initSpeed = 10;
+    public float initSpeed = 20;
     // public float speed = 1;
     private float x = 0;
     private bool moving = false;
