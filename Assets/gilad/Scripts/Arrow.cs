@@ -31,7 +31,10 @@ public class Arrow : MonoBehaviour
     private void Awake()
     {
         
-        
+    }
+
+    private void Start()
+    {
         RotateItems.Cur = transform;
         
         _instance = this;

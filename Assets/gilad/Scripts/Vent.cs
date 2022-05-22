@@ -13,9 +13,11 @@ public class Vent : MonoBehaviour
     // Start is called before the first frame update
 
     private Transform _ball = null;
+
+    private Animator _animator;
     void Start()
     {
-        
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,15 +28,17 @@ public class Vent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("trigger enter");
+        // print("trigger enter");
         _ball = other.gameObject.transform;
+        _animator.SetBool("Fast", true);
         _moveSpeed = _ball.GetComponent<BallEitan>().initSpeed * speed;
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        print("trigger exit");
+        // print("trigger exit");
         _ball = null;
+        _animator.SetBool("Fast", false);
     }
 
     private void FixedUpdate()

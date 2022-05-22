@@ -5,27 +5,38 @@ using UnityEngine;
 
 public class RotateItems : MonoBehaviour
 {
+    [SerializeField] private Color editColor = Color.red;
     
-
     private static Transform cur;
     
     private float _dir = 0f;
     [SerializeField] private float _turnSpeed = 50f;
+
+    private static RotateItems shared;
+
+
+    private void Start()
+    {
+        
+    }
 
     public static Transform Cur
     {
         get => cur;
         set
         {
-            if(cur != null)cur.transform.localScale /= 1.1f;
-            cur = value;
-            if(value != null)value.localScale *= 1.1f;
+            if(value != null && value.tag != "Magnet" && value.tag != "Vent")
+            {
+                if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
+                cur = value;
+                if (value != null) value.GetComponent<SpriteRenderer>().color = shared.editColor;
+            }
         }
     }
 
     private void Awake()
     {
-        // cur = transform;
+        shared = this;
     }
 
     // Update is called once per frame
