@@ -115,6 +115,8 @@ public class BallEitan : MonoBehaviour
     {
         if (other.name == "target")
         {
+            var canvas = GameObject.Find("Canvas");
+            canvas.SetActive(false);
             Time.timeScale = 1;
             GameManager.Level++;
             GameManager.WinLevel();
