@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RotateItems : MonoBehaviour
 {
-    [SerializeField] private Color editColor = Color.red;
+    [SerializeField] private Color editColor;
     
     private static Transform cur;
     
@@ -14,12 +14,7 @@ public class RotateItems : MonoBehaviour
 
     private static RotateItems shared;
 
-
-    private void Start()
-    {
-        
-    }
-
+    
     public static Transform Cur
     {
         get => cur;
@@ -34,6 +29,11 @@ public class RotateItems : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        shared = this;
+    }
+    
     private void Awake()
     {
         shared = this;
