@@ -63,6 +63,11 @@ public class Arrow : MonoBehaviour
         //     // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
         //     Hit();
         // }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Hit();
+        }
         
     }
 
