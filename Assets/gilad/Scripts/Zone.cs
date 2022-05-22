@@ -6,7 +6,7 @@ using UnityEngine;
 public class Zone : MonoBehaviour
 {
     private static List<GameObject> allZones = new List<GameObject>();
-    [SerializeField] private float speed = 1f;
+
     // Start is called before the first frame update
 
     private Transform _ball = null;
@@ -18,7 +18,7 @@ public class Zone : MonoBehaviour
     private void Awake()
     {
         allZones.Add(gameObject);
-        gameObject.SetActive(false);
+        gameObject.GetComponent<CircleCollider2D>().enabled = false;
         print(allZones.Count);
     }
 
@@ -33,8 +33,8 @@ public class Zone : MonoBehaviour
         int i = 0;
         foreach (var zone in allZones)
         {
-            print(i++);
-            zone.SetActive(true);
+            // print(i++);
+            zone.GetComponent<CircleCollider2D>().enabled = true;
         }
     }
 
@@ -42,7 +42,7 @@ public class Zone : MonoBehaviour
     {
         foreach (var zone in allZones)
         {
-            zone.SetActive(false);
+            zone.GetComponent<CircleCollider2D>().enabled = false;
         }
     }
     // private void OnTriggerEnter2D(Collider2D other)
