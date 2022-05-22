@@ -2675,8 +2675,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hittEffectInst: {fileID: 8615583047510524656, guid: 28167ba98d2191a4cb2e25fc1bab49a6, type: 3}
   numWalls: 3
-  numMagnets: 1
-  numVents: 4
+  numMagnets: 0
+  numVents: 1
   transition: {fileID: 1231425249145087711, guid: d07cf37e37ddc4f418c4cc4a4dad0ea9, type: 3}
 --- !u!1001 &781380600
 PrefabInstance:
