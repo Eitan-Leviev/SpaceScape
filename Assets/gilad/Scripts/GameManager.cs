@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
     
     void Start()
     {
-        print("GM start");
         shared = this;
         ValuesManager.UpdateQuants();
         HitEffect.Hits = Hits;

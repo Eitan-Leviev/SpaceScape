@@ -15,7 +15,7 @@ public class BallEitan : MonoBehaviour
     public float initSpeed = 20;
     // public float speed = 1;
     private float x = 0;
-    private bool moving = false;
+    public static bool moving = false;
     private Vector2 previousVelocity;
 
     [SerializeField] private AudioSource bomb;
@@ -136,6 +136,8 @@ public class BallEitan : MonoBehaviour
         rb.angularVelocity = 0;
         editModeObj.GetComponent<Animator>().SetTrigger("back");
         RotateItems.Cur = transform.parent;
+
+        moving = false;
         
         HitAndReset.OnReset();
     }

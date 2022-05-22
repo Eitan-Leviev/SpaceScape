@@ -66,7 +66,15 @@ public class Arrow : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Hit();
+            if (! BallEitan.moving)
+            {
+                Hit();
+            }
+            else
+            {
+                var ballScript = GameObject.Find("ball").gameObject.GetComponent<BallEitan>();
+                ballScript.ResetPlayer();
+            }
         }
         
     }
