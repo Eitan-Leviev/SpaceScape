@@ -63,7 +63,7 @@ public class RotateItems : MonoBehaviour
                 { // todo change to compere tag
                     return;
                 }
-                print(cur.tag);
+                // print(cur.tag);
                 switch (cur.tag)
                 {
                     case "Wall":

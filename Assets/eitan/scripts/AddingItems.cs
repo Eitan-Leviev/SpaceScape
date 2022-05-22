@@ -12,11 +12,14 @@ public class AddingItems : MonoBehaviour
     [SerializeField] private GameObject ventilator; // item code = 3
     [SerializeField] private GameObject magnet; // item code = 2
 
+    private static AddingItems shared;
+
     public static bool IsActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        shared = this;
         IsActive = true;
     }
 
@@ -71,6 +74,10 @@ public class AddingItems : MonoBehaviour
         HitAndReset.OnReset();
         SceneManager.LoadScene($"level {GameManager.Level}");
     }
-    
+
+    public static void Create(int code)
+    {
+        shared.InstantiateItem(code);
+    }
     
 }
