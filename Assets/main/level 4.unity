@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47acbf8e429c860489201aadae999048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsInitPos: {x: 0, y: 0}
+  itemsInitPos: {x: -20, y: -30}
   wall: {fileID: 5152915605826990174, guid: 550af211ab464524dad6eca703f9994c, type: 3}
   ventilator: {fileID: 1326441140984191825, guid: aa2ddce7a6387fa408679bbb14b3528d, type: 3}
   magnet: {fileID: 1326441140984191825, guid: 9a63abec172df1744942415e6290fa68, type: 3}
