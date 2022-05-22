@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b40d0ddbbbcfd3469b6fdf44a244623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 0.5
+  turnSpeed: 0.15
   speed: -1
 --- !u!114 &6963680502207441566
 MonoBehaviour:
@@ -325,7 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1732e17084372e0459d20d1ec42b00ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
 --- !u!250 &1086988916402684931
 PointEffector2D:
   m_ObjectHideFlags: 0
