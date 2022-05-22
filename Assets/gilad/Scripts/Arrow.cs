@@ -68,6 +68,7 @@ public class Arrow : MonoBehaviour
         {
             if (! BallEitan.moving)
             {
+                Time.timeScale = 2;
                 Hit();
             }
             else

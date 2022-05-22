@@ -27,6 +27,9 @@ public class BallEitan : MonoBehaviour
 
     private void Awake()
     {
+        // Time.timeScale = 2;
+        Time.timeScale = 1;
+
         editModeObj = GameObject.Find("grid");
         dir = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
@@ -112,6 +115,7 @@ public class BallEitan : MonoBehaviour
     {
         if (other.name == "target")
         {
+            Time.timeScale = 1;
             GameManager.Level++;
             GameManager.WinLevel();
             gameObject.SetActive(false);
@@ -138,6 +142,7 @@ public class BallEitan : MonoBehaviour
         RotateItems.Cur = transform.parent;
 
         moving = false;
+        Time.timeScale = 1;
         
         HitAndReset.OnReset();
     }

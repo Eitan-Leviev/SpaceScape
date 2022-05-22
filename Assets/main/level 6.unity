@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3b4af59d3803d4db73adf48f88b07e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 60
+  initSpeed: 30
   bomb: {fileID: 28571408}
   moan: {fileID: 28571407}
 --- !u!82 &28571407
