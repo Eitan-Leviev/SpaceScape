@@ -11,7 +11,7 @@ public class HitAndReset : MonoBehaviour
         Zone.Activate();
         AddingItems.IsActive = false;
         Arrow.IsActive = false;
-        RotateItems.cur = null;
+        RotateItems.Cur = null;
     }
 
     public static void OnReset()

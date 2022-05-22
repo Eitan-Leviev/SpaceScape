@@ -32,7 +32,7 @@ public class Arrow : MonoBehaviour
     {
         
         
-        RotateItems.cur = transform;
+        RotateItems.Cur = transform;
         
         _instance = this;
     }

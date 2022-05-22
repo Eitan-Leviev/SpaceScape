@@ -8,13 +8,15 @@ public class DragAndDrop : MonoBehaviour
     public static bool isActive = true;
     private GameObject obj;
     private bool isDragging = true;
-
+    
+    public static Transform Trash {get; set;}
+    
     public static bool isTrash = false;
     
     private void Awake()
     {
         // print("awake");
-        RotateItems.cur = transform;
+        RotateItems.Cur = transform;
         isTrash = true;
     }
 
@@ -47,7 +49,7 @@ public class DragAndDrop : MonoBehaviour
         {
             // print(1);
             isDragging = true;
-            RotateItems.cur = transform;
+            RotateItems.Cur = transform;
             
         }
     }
@@ -64,7 +66,7 @@ public class DragAndDrop : MonoBehaviour
     private void StopDrag()
     {
         isDragging = false;
-        if (isTrash)
+        if (Vector3.Magnitude(transform.position - Trash.position) < Trash.localScale.x / 2f)
         {
             switch (gameObject.tag)
             {
@@ -79,7 +81,7 @@ public class DragAndDrop : MonoBehaviour
                     break;
             }
 
-            RotateItems.cur = null;
+            RotateItems.Cur = null;
             ValuesManager.UpdateQuants();
             Destroy(gameObject);
         }

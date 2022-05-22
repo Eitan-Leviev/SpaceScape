@@ -8,7 +8,7 @@ public class Sometihng : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        DragAndDrop.Trash = transform;
     }
 
     // Update is called once per frame
@@ -17,15 +17,5 @@ public class Sometihng : MonoBehaviour
         
     }
 
-    private void OnMouseEnter()
-    {
-        print("enter");
-        DragAndDrop.isTrash = true;
-    }
-
-    private void OnMouseExit()
-    {
-        print("exit");
-        DragAndDrop.isTrash = false;
-    }
+    
 }

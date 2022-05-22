@@ -121,7 +121,7 @@ public class BallEitan : MonoBehaviour
     private void OnMouseDown()
     {
         // print("j");
-        RotateItems.cur = dir.transform;
+        RotateItems.Cur = dir.transform;
     }
 
     public void ResetPlayer()
@@ -135,7 +135,7 @@ public class BallEitan : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
         editModeObj.GetComponent<Animator>().SetTrigger("back");
-        RotateItems.cur = transform.parent;
+        RotateItems.Cur = transform.parent;
         
         HitAndReset.OnReset();
     }

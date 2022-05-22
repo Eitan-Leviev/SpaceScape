@@ -5,14 +5,23 @@ using UnityEngine;
 
 public class RotateItems : MonoBehaviour
 {
-    public static Transform cur;
+    
+
+    private static Transform cur;
     
     private float _dir = 0f;
     [SerializeField] private float _turnSpeed = 50f;
 
-
-    
-    
+    public static Transform Cur
+    {
+        get => cur;
+        set
+        {
+            if(cur != null)cur.transform.localScale /= 1.1f;
+            cur = value;
+            if(value != null)value.localScale *= 1.1f;
+        }
+    }
 
     private void Awake()
     {
@@ -54,17 +63,17 @@ public class RotateItems : MonoBehaviour
         //     _dir = 0f;
         // }
 
-        if(cur != null)
+        if(Cur != null)
         {
             
             if (Input.GetKeyDown(KeyCode.Delete))
             {
-                if (cur.CompareTag("Ball"))
+                if (Cur.CompareTag("Ball"))
                 { // todo change to compere tag
                     return;
                 }
                 // print(cur.tag);
-                switch (cur.tag)
+                switch (Cur.tag)
                 {
                     case "Wall":
                         GameManager.NumWalls++;
@@ -76,12 +85,12 @@ public class RotateItems : MonoBehaviour
                         GameManager.NumVents++;
                         break;
                 }
-                Destroy(cur.gameObject);
-                cur = null;
+                Destroy(Cur.gameObject);
+                Cur = null;
                 ValuesManager.UpdateQuants();
                 return;
             }
-            cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);
+            Cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);
         }
     }
 }
