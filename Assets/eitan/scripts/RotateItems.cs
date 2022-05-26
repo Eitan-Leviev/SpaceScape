@@ -20,7 +20,7 @@ public class RotateItems : MonoBehaviour
         get => cur;
         set
         {
-            if(value != null && value.tag != "Magnet" && value.tag != "Vent")
+            if(value == null || (value.tag != "Magnet" && value.tag != "Vent"))
             {
                 if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
                 cur = value;

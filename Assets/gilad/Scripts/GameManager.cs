@@ -13,16 +13,28 @@ public class GameManager : MonoBehaviour
     private LinkedList<GameObject> Hits = new LinkedList<GameObject>();
 
     [SerializeField] private GameObject hittEffectInst;
-    
+
     [SerializeField] private int numWalls = 3;
-    
+
     [SerializeField] private int numMagnets = 3;
-    
+
     [SerializeField] private int numVents = 3;
 
     [SerializeField] private GameObject transition;
-    
-    
+
+    private int _numTries = 1;
+
+    public static int NumTries
+    {
+        get => shared._numTries;
+        set
+        {
+            shared._numTries = value;
+            ValuesManager.UpdateQuants();
+        }
+    }
+
+
     public static int NumWalls
     {
         get => shared.numWalls;
@@ -41,14 +53,14 @@ public class GameManager : MonoBehaviour
         set => shared.numVents = Math.Max(value, 0);
     }
     // Start is called before the first frame update
-    
+
     void Start()
     {
         shared = this;
         ValuesManager.UpdateQuants();
         HitEffect.Hits = Hits;
     }
-    
+
     public static void PlaceHit(Vector3 pos)
     {
         if (shared.Hits.Count == 0)

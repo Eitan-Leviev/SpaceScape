@@ -69,7 +69,7 @@ public class Arrow : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (! BallEitan.moving)
+            if (!BallEitan.moving)
             {
                 Time.timeScale = 2;
                 Hit();

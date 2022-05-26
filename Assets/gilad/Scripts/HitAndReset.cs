@@ -20,5 +20,6 @@ public class HitAndReset : MonoBehaviour
         Zone.Deactivate();
         AddingItems.IsActive = true;
         Arrow.IsActive = true;
+        GameManager.NumTries++;
     }
 }
