@@ -19,7 +19,7 @@ public class Zone : MonoBehaviour
     {
         allZones.Add(gameObject);
         gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        print(allZones.Count);
+        // print(allZones.Count);
     }
 
     // Update is called once per frame
