@@ -9,12 +9,13 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     public float speed = 2; // Units per second
     private int flipper = 0; // 1 to shrink, 2 to grow, 0 do nothing
-    [SerializeField] private float maxSize = 1.4f;
+    [SerializeField] private float maxScale = 1.4f;
+    private Vector3 initScale;
     // private RectTransform _transform;
 
     private void Awake()
     {
-        // GetComponent<Transform>();
+        initScale = transform.localScale;
     }
 
 
@@ -25,7 +26,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
         if (flipper == 1) // shrink
         {
-            if (transform.localScale.y > 1)
+            if (transform.localScale.y > initScale.y)
             {
                 Vector3 scale = transform.localScale;
                 scale.x -= movement;
@@ -36,13 +37,13 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             else
             {
                 flipper = 0;
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = initScale;
             }
         }
         
         if (flipper == 2) // grow
         {
-            if (transform.localScale.y < maxSize)
+            if (transform.localScale.y < initScale.y * maxScale)
             {
                 Vector3 scale = transform.localScale;
                 scale.x += movement;
@@ -53,7 +54,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             else
             {
                 flipper = 0;
-                transform.localScale = new Vector3(maxSize, maxSize, maxSize);
+                transform.localScale = initScale * maxScale;
             }
         }
     }
