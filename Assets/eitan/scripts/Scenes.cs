@@ -8,6 +8,7 @@ public class Scenes : MonoBehaviour
     public void ReloadScene()
     {
         HitAndReset.OnReset();
-        SceneManager.LoadScene($"level {GameManager.Level}");
+        Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
+        // SceneManager.LoadScene($"level {GameManager.Level}");
     }
 }
