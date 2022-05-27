@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   editColor: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
-  _turnSpeed: 200
+  _turnSpeed: 500

@@ -10,7 +10,7 @@ public class RotateItems : MonoBehaviour
     private static Transform cur;
     
     private float _dir = 0f;
-    [SerializeField] private float _turnSpeed = 50f;
+    [SerializeField] private float _turnSpeed = 500f;
 
     private static RotateItems shared;
 
