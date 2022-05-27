@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
@@ -53,6 +54,14 @@ public class GameManager : MonoBehaviour
         set => shared.numVents = Math.Max(value, 0);
     }
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        var curSceneName = SceneManager.GetActiveScene().name;
+        var curLevelString = curSceneName.Substring(6, curSceneName.Length - 6); // given "level 122323" we take "122323"
+        var curLevelNum = Int32.Parse(curLevelString);
+        Level = curLevelNum;
+    }
 
     void Start()
     {
