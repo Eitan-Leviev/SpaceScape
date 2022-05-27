@@ -2,19 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class ButtonHovering : MonoBehaviour
+public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public float speed = 1; // Units per second
+    public float speed = 2; // Units per second
     private int flipper = 0; // 1 to shrink, 2 to grow, 0 do nothing
-    [SerializeField] private float maxSize = 1.2f;
-    
+    [SerializeField] private float maxSize = 1.4f;
+    // private RectTransform _transform;
+
+    private void Awake()
+    {
+        // GetComponent<Transform>();
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        print(flipper);
-        
         float movement = speed * Time.deltaTime;
 
         if (flipper == 1) // shrink
@@ -51,14 +57,17 @@ public class ButtonHovering : MonoBehaviour
             }
         }
     }
-    
-    private void OnMouseEnter()
+
+    public void OnPointerEnter(PointerEventData eventData)
     {
+        // print(1);
         flipper = 2; // grow
     }
-
-    private void OnMouseExit()
+    
+    public void OnPointerExit(PointerEventData eventData)
     {
+        // print(2);
         flipper = 1; // shrink
     }
+    
 }
