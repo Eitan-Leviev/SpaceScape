@@ -76,8 +76,12 @@ public class Arrow : MonoBehaviour
             }
             else
             {
-                var ballScript = GameObject.Find("ball").gameObject.GetComponent<BallEitan>();
-                ballScript.ResetPlayer();
+                var ball = GameObject.Find("ball");
+                if (ball)
+                {
+                    var ballScript = ball.gameObject.GetComponent<BallEitan>();
+                    ballScript.ResetPlayer();
+                }
             }
         }
         
