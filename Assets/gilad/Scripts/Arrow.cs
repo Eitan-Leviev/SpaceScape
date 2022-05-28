@@ -36,7 +36,7 @@ public class Arrow : MonoBehaviour
     private void Start()
     {
         RotateItems.Cur = transform;
-        
+        RotateItems.Default = gameObject.transform;
         _instance = this;
     }
 

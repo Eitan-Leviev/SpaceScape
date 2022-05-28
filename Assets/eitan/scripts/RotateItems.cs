@@ -6,26 +6,29 @@ using UnityEngine;
 public class RotateItems : MonoBehaviour
 {
     [SerializeField] private Color editColor;
-    
+
     private static Transform cur;
-    
+
     private float _dir = 0f;
     [SerializeField] private float _turnSpeed = 500f;
 
     private static RotateItems shared;
 
-    
+
+    public static Transform Default { get; set; }
+
     public static Transform Cur
     {
         get => cur;
         set
         {
-            if(value == null || (value.tag != "Magnet" && value.tag != "Vent"))
+            if (value == null || value.tag == "Magnet" || value.tag == "Vent")
             {
-                if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
-                cur = value;
-                if (value != null) value.GetComponent<SpriteRenderer>().color = shared.editColor;
+                value = Default;
             }
+            if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
+            cur = value;
+            value.GetComponent<SpriteRenderer>().color = shared.editColor;
         }
     }
 
@@ -33,7 +36,7 @@ public class RotateItems : MonoBehaviour
     {
         shared = this;
     }
-    
+
     private void Awake()
     {
         shared = this;
@@ -42,14 +45,22 @@ public class RotateItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (hit.transform == null)
+            {
+                Cur = Default;
+            }
+        }
         // print(cur.parent.name);
-        
-        if (Input.GetAxis( "Mouse ScrollWheel" ) > 0)
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             // print("R");
             _dir = -_turnSpeed;
         }
-        else if (Input.GetAxis( "Mouse ScrollWheel" ) < 0)
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             // print("L");
             _dir = _turnSpeed;
@@ -58,7 +69,7 @@ public class RotateItems : MonoBehaviour
         {
             _dir = 0f;
         }
-        
+
         // if (Input.GetKey(KeyCode.RightArrow))
         // {
         //     print("R");
@@ -74,15 +85,16 @@ public class RotateItems : MonoBehaviour
         //     _dir = 0f;
         // }
 
-        if(Cur != null)
+        if (Cur != null)
         {
-            
             if (Input.GetKeyDown(KeyCode.Delete))
             {
                 if (Cur.CompareTag("Ball"))
-                { // todo change to compere tag
+                {
+                    // todo change to compere tag
                     return;
                 }
+
                 // print(cur.tag);
                 switch (Cur.tag)
                 {
@@ -96,11 +108,13 @@ public class RotateItems : MonoBehaviour
                         GameManager.NumVents++;
                         break;
                 }
+
                 Destroy(Cur.gameObject);
                 Cur = null;
                 ValuesManager.UpdateQuants();
                 return;
             }
+
             Cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);
         }
     }

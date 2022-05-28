@@ -705,6 +705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adae2e408c7f42544bcf7fe4437a3d84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alpha: 75
   wallTxt: {fileID: 1697742609}
   magnetTxt: {fileID: 1697742608}
   ventsTxt: {fileID: 1697742607}
@@ -1635,12 +1636,20 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3741381821064361039, guid: f228b61cf51353d4fa7edc892648b6a5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.4498634
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741381821064361039, guid: f228b61cf51353d4fa7edc892648b6a5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5881958
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741381821064361039, guid: f228b61cf51353d4fa7edc892648b6a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.37
+      value: -6.8383
       objectReference: {fileID: 0}
     - target: {fileID: 3741381821064361039, guid: f228b61cf51353d4fa7edc892648b6a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.8
+      value: -4.3724
       objectReference: {fileID: 0}
     - target: {fileID: 3741381821064361039, guid: f228b61cf51353d4fa7edc892648b6a5, type: 3}
       propertyPath: m_LocalPosition.z

@@ -30,7 +30,7 @@ public class Vent : MonoBehaviour
     {
         // print("trigger enter");
         _ball = other.gameObject.transform;
-        _animator.SetBool("Fast", true);
+        // if(_animator != null)_animator.SetBool("Fast", true);
         _moveSpeed = _ball.GetComponent<BallEitan>().initSpeed * speed;
     }
 
@@ -38,7 +38,7 @@ public class Vent : MonoBehaviour
     {
         // print("trigger exit");
         _ball = null;
-        _animator.SetBool("Fast", false);
+        // if(_animator != null)_animator.SetBool("Fast", false);
     }
 
     private void FixedUpdate()
