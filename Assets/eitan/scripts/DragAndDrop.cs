@@ -8,6 +8,7 @@ using Vector3 = UnityEngine.Vector3;
 
 public class DragAndDrop : MonoBehaviour
 {
+    [SerializeField] private bool isDefault = false;
     public static bool isActive = true;
     private GameObject obj;
     private bool isDragging = true;
@@ -41,10 +42,11 @@ public class DragAndDrop : MonoBehaviour
         }
 }
 
-private void Awake()
+private void Start()
 {
-    RotateItems.Cur = transform;
-    originalScale = transform.localScale;
+    var transform1 = transform;
+    if(!isDefault)RotateItems.Cur = transform1;
+    originalScale = transform1.localScale;
     isTrash = false;
 }
 
