@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    public static bool Active { set; get; }
+    
+    
     public float speed = 2; // Units per second
     private int flipper = 0; // 1 to shrink, 2 to grow, 0 do nothing
     [SerializeField] private float maxScale = 1.4f;
@@ -15,6 +18,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private void Awake()
     {
+        Active = true;
         initScale = transform.localScale;
     }
 
@@ -40,7 +44,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 transform.localScale = initScale;
             }
         }
-        
+        if(!Active) return;
         if (flipper == 2) // grow
         {
             if (transform.localScale.y < initScale.y * maxScale)
@@ -62,6 +66,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         // print(1);
+        if(!Active) return;
         flipper = 2; // grow
     }
     

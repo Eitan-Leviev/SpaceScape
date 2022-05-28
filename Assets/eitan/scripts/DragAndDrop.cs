@@ -73,10 +73,12 @@ void Update()
                 if (collider.CompareTag("Trash"))
                 {
                     IsTrash = true;
+                    ButtonHovering.Active = false;
                 }
                 else
                 {
                     IsTrash = false;
+                    ButtonHovering.Active = true;
                 }
             }
 
@@ -93,6 +95,10 @@ private void OnMouseDown()
         _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         isDragging = true;
         RotateItems.Cur = transform;
+    }
+    else
+    {
+        BallEitan.BallReset();
     }
 }
 

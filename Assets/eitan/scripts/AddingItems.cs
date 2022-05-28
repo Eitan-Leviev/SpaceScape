@@ -61,6 +61,10 @@ public class AddingItems : MonoBehaviour
                 ValuesManager.UpdateQuants();
             }        
         }
+        else
+        {
+            BallEitan.BallReset();
+        }
     }
 
     private bool TryToTake(int itemCode)

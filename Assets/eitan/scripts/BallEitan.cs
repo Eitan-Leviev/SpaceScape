@@ -6,7 +6,7 @@ using UnityEngine;
 public class BallEitan : MonoBehaviour
 {
     public static bool IsEditingBall = true;
-
+    
     private Vector3 initPos;
     private Quaternion initRotation;
 
@@ -17,6 +17,8 @@ public class BallEitan : MonoBehaviour
     private float x = 0;
     public static bool moving = false;
     private Vector2 previousVelocity;
+
+    private static BallEitan shared;
 
     [SerializeField] private AudioSource bomb;
     [SerializeField] private AudioSource moan;
@@ -29,7 +31,7 @@ public class BallEitan : MonoBehaviour
     {
         // Time.timeScale = 2;
         Time.timeScale = 1;
-
+        shared = this;
         editModeObj = GameObject.Find("grid");
         dir = transform.parent.gameObject;
         rb = GetComponent<Rigidbody2D>();
@@ -142,10 +144,13 @@ public class BallEitan : MonoBehaviour
         rb.angularVelocity = 0;
         editModeObj.GetComponent<Animator>().SetTrigger("back");
         RotateItems.Cur = transform.parent;
-
         moving = false;
         Time.timeScale = 1;
-        
         HitAndReset.OnReset();
+    }
+
+    public static void BallReset()
+    {
+        shared.ResetPlayer();
     }
 }
