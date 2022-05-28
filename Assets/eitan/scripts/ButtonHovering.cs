@@ -66,7 +66,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         // print(1);
-        if(!Active) return;
+        // if(!Active) return;
         flipper = 2; // grow
     }
     

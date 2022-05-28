@@ -129,7 +129,7 @@ private void StopDrag()
                 GameManager.NumVents++;
                 break;
         }
-
+        ButtonHovering.Active = true;
         RotateItems.Cur = null;
         ValuesManager.UpdateQuants();
         Destroy(gameObject);
