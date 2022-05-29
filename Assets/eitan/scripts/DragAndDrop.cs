@@ -18,8 +18,13 @@ public class DragAndDrop : MonoBehaviour
 
     private Vector3 originalScale;
 
-    public static float _scaleDecrease = 0.6f;
+    private float _curScale = 1f;
 
+    public static float _scaleDecrease = 0.6f;
+    
+    public float speed = 2; // Units per second
+    private int flipper = 0; // 1 to grow, 2 to shrink, 0 do nothing
+    
     public static Transform Trash { get; set; }
 
     private Collider2D[] _allCollitions;
@@ -31,15 +36,7 @@ public class DragAndDrop : MonoBehaviour
         get => isTrash;
         set
         {
-            if (value)
-            {
-                transform.localScale *= _scaleDecrease;
-            }
-            else
-            {
-                transform.localScale = originalScale;
-            }
-
+            flipper = value ? 1 : 2;
             isTrash = value;
         }
     }
@@ -76,18 +73,50 @@ public class DragAndDrop : MonoBehaviour
                     {
                         IsTrash = true;
                         ButtonHovering.Active = false;
+                        break;
                     }
-                    else
-                    {
-                        IsTrash = false;
-                        ButtonHovering.Active = true;
-                    }
+                    IsTrash = false;
+                    ButtonHovering.Active = true;
+                    
                 }
             }
         }
+        Resize();
     }
 
 
+    private void Resize()
+    {
+        float movement = speed * Time.deltaTime;
+
+        if (flipper == 1) // shrink
+        {
+            if (_curScale >  _scaleDecrease)
+            {
+                _curScale -= movement;
+            }
+            else
+            {
+                flipper = 0;
+                _curScale = _scaleDecrease;
+            }
+        }
+        // if(!Active) return;
+        if (flipper == 2) // grow
+        {
+            if (_curScale < 1)
+            {
+                _curScale += movement;
+            }
+            else
+            {
+                flipper = 0;
+                _curScale = 1;
+            }
+        }
+        transform.localScale = originalScale * _curScale;
+    }
+    
     private void OnMouseDown()
     {
         // print(1);
