@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDefault: 0
+  speed: 2
   isTrash: 0
 --- !u!1 &3308534141107256329
 GameObject:
@@ -343,8 +344,8 @@ GameObject:
   - component: {fileID: 5131893374769304111}
   - component: {fileID: 8500753768680138864}
   - component: {fileID: 6963680502207441566}
-  - component: {fileID: 7810122237886250016}
   - component: {fileID: 8599001968452377641}
+  - component: {fileID: 6152639033622569568}
   m_Layer: 2
   m_Name: pull zone
   m_TagString: Untagged
@@ -408,25 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1732e17084372e0459d20d1ec42b00ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &7810122237886250016
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7813713564303097237}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 948d92b461f114c49a26a8b18730419e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &8599001968452377641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -468,7 +450,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3137255}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -478,3 +460,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6152639033622569568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7813713564303097237}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b443c25bfcd6d484d9687838adffc6e3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

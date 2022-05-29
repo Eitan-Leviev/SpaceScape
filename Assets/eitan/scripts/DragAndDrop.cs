@@ -27,7 +27,7 @@ public class DragAndDrop : MonoBehaviour
     
     public static Transform Trash { get; set; }
 
-    private Collider2D[] _allCollitions;
+    private Collider2D[] _allCollisions;
 
     public bool isTrash = false;
 
@@ -66,10 +66,10 @@ public class DragAndDrop : MonoBehaviour
                 var t = transform;
                 t.position = new Vector3(touch.x - _offset.x, touch.y - _offset.y, t.position.z);
                 // ReSharper disable once Unity.PreferNonAllocApi
-                _allCollitions = Physics2D.OverlapCircleAll(touch, 0.0f);
-                foreach (var collider in _allCollitions)
+                _allCollisions = Physics2D.OverlapCircleAll(touch, 0.0f);
+                foreach (var collider1 in _allCollisions)
                 {
-                    if (collider.CompareTag("Trash"))
+                    if (collider1.CompareTag("Trash"))
                     {
                         IsTrash = true;
                         ButtonHovering.Active = false;
@@ -77,14 +77,12 @@ public class DragAndDrop : MonoBehaviour
                     }
                     IsTrash = false;
                     ButtonHovering.Active = true;
-                    
                 }
             }
         }
         Resize();
     }
-
-
+    
     private void Resize()
     {
         float movement = speed * Time.deltaTime;
@@ -101,7 +99,6 @@ public class DragAndDrop : MonoBehaviour
                 _curScale = _scaleDecrease;
             }
         }
-        // if(!Active) return;
         if (flipper == 2) // grow
         {
             if (_curScale < 1)
