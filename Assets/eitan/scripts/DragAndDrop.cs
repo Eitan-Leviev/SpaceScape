@@ -112,7 +112,7 @@ public class DragAndDrop : MonoBehaviour
     private void StopDrag()
     {
         isDragging = false;
-        // RotateItems.Cur = RotateItems.Default;
+        RotateItems.Cur = RotateItems.Default;
         if (isTrash)
         {
             switch (gameObject.tag)

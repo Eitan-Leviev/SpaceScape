@@ -27,9 +27,9 @@ public class RotateItems : MonoBehaviour
             {
                 value = Default;
             }
-            if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
+            // if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
             cur = value;
-            value.GetComponent<SpriteRenderer>().color = shared.editColor;
+            // value.GetComponent<SpriteRenderer>().color = shared.editColor;
         }
     }
 
