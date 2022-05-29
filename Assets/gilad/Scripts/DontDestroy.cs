@@ -1,29 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestroy : MonoBehaviour
+namespace gilad.Scripts
 {
-    private void Awake()
+    public class DontDestroy : MonoBehaviour
     {
-        GameObject[] obj = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        if (obj.Length > 1)
+        private void Awake()
         {
-            Destroy(gameObject);
+            GameObject[] obj = GameObject.FindGameObjectsWithTag(gameObject.tag);
+            if (obj.Length > 1)
+            {
+                Destroy(gameObject);
+            }
+            DontDestroyOnLoad(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
         
-    }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using gilad.Scripts;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -28,7 +29,7 @@ public class DragAndDrop : MonoBehaviour
     public bool IsTrash
     {
         get => isTrash;
-        set 
+        set
         {
             if (value)
             {
@@ -38,101 +39,99 @@ public class DragAndDrop : MonoBehaviour
             {
                 transform.localScale = originalScale;
             }
+
             isTrash = value;
         }
-}
+    }
 
-private void Start()
-{
-    var transform1 = transform;
-    if(!isDefault)RotateItems.Cur = transform1;
-    originalScale = transform1.localScale;
-    isTrash = false;
-}
+    private void Start()
+    {
+        var transform1 = transform;
+        if (!isDefault) RotateItems.Cur = transform1;
+        originalScale = transform1.localScale;
+        isTrash = false;
+    }
 
 // Update is called once per frame
-void Update()
-{
-    if (isActive)
+    void Update()
     {
-        var touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // print(touch);
-        if (!Input.GetMouseButton(0) && isDragging)
+        if (isActive)
         {
-            StopDrag();
-        }
-
-        if (isDragging)
-        {
-            var t = transform;
-            t.position = new Vector3(touch.x - _offset.x, touch.y - _offset.y, t.position.z);
-            // ReSharper disable once Unity.PreferNonAllocApi
-            _allCollitions = Physics2D.OverlapCircleAll(touch, 0.0f);
-            foreach (var collider in _allCollitions)
+            var touch = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // print(touch);
+            if (!Input.GetMouseButton(0) && isDragging)
             {
-                if (collider.CompareTag("Trash"))
-                {
-                    IsTrash = true;
-                    ButtonHovering.Active = false;
-                }
-                else
-                {
-                    IsTrash = false;
-                    ButtonHovering.Active = true;
-                }
+                StopDrag();
             }
 
+            if (isDragging)
+            {
+                var t = transform;
+                t.position = new Vector3(touch.x - _offset.x, touch.y - _offset.y, t.position.z);
+                // ReSharper disable once Unity.PreferNonAllocApi
+                _allCollitions = Physics2D.OverlapCircleAll(touch, 0.0f);
+                foreach (var collider in _allCollitions)
+                {
+                    if (collider.CompareTag("Trash"))
+                    {
+                        IsTrash = true;
+                        ButtonHovering.Active = false;
+                    }
+                    else
+                    {
+                        IsTrash = false;
+                        ButtonHovering.Active = true;
+                    }
+                }
+            }
         }
     }
-}
 
 
-private void OnMouseDown()
-{
-    if (isActive)
+    private void OnMouseDown()
     {
         // print(1);
         _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         isDragging = true;
         RotateItems.Cur = transform;
-    }
-    else
-    {
-        BallEitan.BallReset();
-    }
-}
-
-private void OnMouseUp()
-{
-    if (isActive)
-    {
-        // print(2);
-        StopDrag();
-    }
-}
-
-private void StopDrag()
-{
-    isDragging = false;
-    RotateItems.Cur = RotateItems.Default;
-    if (isTrash)
-    {
-        switch (gameObject.tag)
+        if (!isActive)
         {
-            case "Wall":
-                GameManager.NumWalls++;
-                break;
-            case "Magnet":
-                GameManager.NumMagnets++;
-                break;
-            case "Vent":
-                GameManager.NumVents++;
-                break;
+            BallEitan.BallReset();
         }
-        ButtonHovering.Active = true;
-        RotateItems.Cur = null;
-        ValuesManager.UpdateQuants();
-        Destroy(gameObject);
     }
-}
+
+    private void OnMouseUp()
+    {
+        if (isActive)
+        {
+            // print(2);
+            StopDrag();
+        }
+    }
+
+    private void StopDrag()
+    {
+        isDragging = false;
+        // RotateItems.Cur = RotateItems.Default;
+        if (isTrash)
+        {
+            switch (gameObject.tag)
+            {
+                case "Wall":
+                    GameManager.NumWalls++;
+                    break;
+                case "Magnet":
+                    GameManager.NumMagnets++;
+                    break;
+                case "Vent":
+                    GameManager.NumVents++;
+                    break;
+            }
+
+            ButtonHovering.Active = true;
+            RotateItems.Cur = null;
+            ValuesManager.UpdateQuants();
+            Destroy(gameObject);
+        }
+    }
 }

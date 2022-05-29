@@ -1,73 +1,54 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zone : MonoBehaviour
+namespace gilad.Scripts
 {
-    private static List<GameObject> allZones = new List<GameObject>();
-
-    // Start is called before the first frame update
-
-    private Transform _ball = null;
-    void Start()
+    public class Zone : MonoBehaviour
     {
-        
-    }
+        private static List<GameObject> allZones = new List<GameObject>();
 
-    private void Awake()
-    {
-        allZones.Add(gameObject);
-        gameObject.GetComponent<CircleCollider2D>().enabled = false;
-        // print(allZones.Count);
-    }
+        // Start is called before the first frame update
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public static void Activate()
-    {
-        int i = 0;
-        foreach (var zone in allZones)
+        private Transform _ball = null;
+        void Start()
         {
-            // print(i++);
-            zone.GetComponent<CircleCollider2D>().enabled = true;
+        
         }
-    }
 
-    public static void Deactivate()
-    {
-        foreach (var zone in allZones)
+        private void Awake()
         {
-            zone.GetComponent<CircleCollider2D>().enabled = false;
+            allZones.Add(gameObject);
+            gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            // print(allZones.Count);
         }
-    }
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     print("trigger enter");
-    //     _ball = other.gameObject.transform;
-    // }
-    //
-    // private void OnTriggerExit2D(Collider2D other)
-    // {
-    //     print("trigger exit");
-    //     _ball = null;
-    // }
-    //
-    // private void FixedUpdate()
-    // {
-    //     if (_ball != null)
-    //     {
-    //         var normal = (_ball.position - transform.position).normalized * speed;
-    //         _ball.gameObject.GetComponent<Rigidbody2D>().AddForce(normal);
-    //     }
-    // }
 
-    private void OnDestroy()
-    {
-        allZones.Remove(gameObject);
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
+
+        public static void Activate()
+        {
+            int i = 0;
+            foreach (var zone in allZones)
+            {
+                // print(i++);
+                zone.GetComponent<CircleCollider2D>().enabled = true;
+            }
+        }
+
+        public static void Deactivate()
+        {
+            foreach (var zone in allZones)
+            {
+                zone.GetComponent<CircleCollider2D>().enabled = false;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            allZones.Remove(gameObject);
+        }
     }
 }

@@ -1,27 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PointerDownBtn : MonoBehaviour, IPointerDownHandler
+namespace gilad.Scripts
 {
-
-    [SerializeField] private int code;
-    // Start is called before the first frame update
-    void Start()
+    public class PointerDownBtn : MonoBehaviour, IPointerDownHandler
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+        [SerializeField] private int code;
+        // Start is called before the first frame update
+        void Start()
+        {
         
-    }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+        
+        }
     
 
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        AddingItems.Create(code);
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            AddingItems.Create(code);
+        }
     }
 }

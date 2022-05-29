@@ -1,19 +1,20 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class HitEffect : MonoBehaviour
+namespace gilad.Scripts
 {
-    public static LinkedList<GameObject> Hits { get; set; }
-
-    [SerializeField] private GameObject effect;
-    
-    // Start is called before the first frame update
-    
-    void Deactivate()
+    public class HitEffect : MonoBehaviour
     {
-        Hits.AddFirst(gameObject);
-        gameObject.SetActive(false);
+        public static LinkedList<GameObject> Hits { get; set; }
+
+        [SerializeField] private GameObject effect;
+    
+        // Start is called before the first frame update
+    
+        void Deactivate()
+        {
+            Hits.AddFirst(gameObject);
+            gameObject.SetActive(false);
+        }
     }
 }

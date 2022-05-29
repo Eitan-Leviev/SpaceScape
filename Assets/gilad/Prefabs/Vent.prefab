@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 1816986401169857181}
   - component: {fileID: 2424469467445447153}
   - component: {fileID: 3018408274814481625}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: push zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}

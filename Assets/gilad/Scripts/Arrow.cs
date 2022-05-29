@@ -1,117 +1,116 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-public class Arrow : MonoBehaviour
+namespace gilad.Scripts
 {
-    private static Arrow _instance;
+    public class Arrow : MonoBehaviour
+    {
+        private static Arrow _instance;
 
-    [SerializeField] private Transform forward;
+        [SerializeField] private Transform forward;
     
-    [SerializeField] private Transform backward;
+        [SerializeField] private Transform backward;
 
     
     
-    private float _dir = 0f;
+        private float _dir = 0f;
     
-    [SerializeField] private float _turnSpeed = 50f;
+        [SerializeField] private float _turnSpeed = 50f;
 
-    [SerializeField] private BallEitan ball;
+        [SerializeField] private BallEitan ball;
 
-    private static bool isActive = true;
+        private static bool isActive = true;
 
-    public static bool IsActive
-    {
-        get => isActive;
-        set => isActive = value;
-    }
-
-    private void Awake()
-    {
-        
-    }
-
-    private void Start()
-    {
-        RotateItems.Cur = transform;
-        RotateItems.Default = gameObject.transform;
-        _instance = this;
-    }
-
-    public static Vector3 GetDirection()
-    {
-        //Deactivate();
-        return _instance.forward.position - _instance.backward.position;
-    }
-
-    private void Update()
-    {
-        // if (Input.GetKey(KeyCode.RightArrow))
-        // {
-        //     _dir = -_turnSpeed;
-        // }
-        // else if (Input.GetKey(KeyCode.LeftArrow))
-        // {
-        //     _dir = _turnSpeed;
-        // }
-        // else
-        // {
-        //     _dir = 0f;
-        // }
-
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
-        //     Hit();
-        // }
-
-        if (Input.GetMouseButtonDown(1))
+        public static bool IsActive
         {
-            if (!BallEitan.moving)
+            get => isActive;
+            set => isActive = value;
+        }
+
+        private void Awake()
+        {
+        
+        }
+
+        private void Start()
+        {
+            RotateItems.Cur = transform;
+            RotateItems.Default = gameObject.transform;
+            _instance = this;
+        }
+
+        public static Vector3 GetDirection()
+        {
+            //Deactivate();
+            return _instance.forward.position - _instance.backward.position;
+        }
+
+        private void Update()
+        {
+            // if (Input.GetKey(KeyCode.RightArrow))
+            // {
+            //     _dir = -_turnSpeed;
+            // }
+            // else if (Input.GetKey(KeyCode.LeftArrow))
+            // {
+            //     _dir = _turnSpeed;
+            // }
+            // else
+            // {
+            //     _dir = 0f;
+            // }
+
+            // if (Input.GetKeyDown(KeyCode.Space))
+            // {
+            //     // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
+            //     Hit();
+            // }
+
+            if (Input.GetMouseButtonDown(1))
             {
-                Time.timeScale = 2;
-                Hit();
-            }
-            else
-            {
-                var ball = GameObject.Find("ball");
-                if (ball)
+                if (!BallEitan.moving)
                 {
-                    var ballScript = ball.gameObject.GetComponent<BallEitan>();
-                    ballScript.ResetPlayer();
+                    Time.timeScale = 2;
+                    Hit();
+                }
+                else
+                {
+                    var ball = GameObject.Find("ball");
+                    if (ball)
+                    {
+                        var ballScript = ball.gameObject.GetComponent<BallEitan>();
+                        ballScript.ResetPlayer();
+                    }
                 }
             }
-        }
         
-    }
+        }
 
-    // private void FixedUpdate()
-    // {
-    //     CurrRotate.curr.Rotate(0,0,_dir * Time.fixedDeltaTime);
-    // }
+        // private void FixedUpdate()
+        // {
+        //     CurrRotate.curr.Rotate(0,0,_dir * Time.fixedDeltaTime);
+        // }
 
-    public static void Activate()
-    {
-        _instance.gameObject.SetActive(true);
-    }
-
-    private static void Deactivate()
-    {
-        _instance._dir = 0f;
-        _instance.gameObject.SetActive(false);
-    }
-    
-    public void Hit()
-    {
-        if(isActive)
+        public static void Activate()
         {
-            // transform.Find("LAZER").gameObject.SetActive(false);
-            transform.Find("Lazer").gameObject.SetActive(false);
-            ball.transform.SetParent(null);
-            ball.GetComponent<CircleCollider2D>().isTrigger = false;
-            ball.Hit();
+            _instance.gameObject.SetActive(true);
+        }
+
+        private static void Deactivate()
+        {
+            _instance._dir = 0f;
+            _instance.gameObject.SetActive(false);
+        }
+    
+        public void Hit()
+        {
+            if(isActive)
+            {
+                // transform.Find("LAZER").gameObject.SetActive(false);
+                transform.Find("Lazer").gameObject.SetActive(false);
+                ball.transform.SetParent(null);
+                ball.GetComponent<CircleCollider2D>().isTrigger = false;
+                ball.Hit();
+            }
         }
     }
 }

@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 6963680502207441566}
   - component: {fileID: 7810122237886250016}
   - component: {fileID: 8599001968452377641}
-  m_Layer: 6
+  m_Layer: 2
   m_Name: pull zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
