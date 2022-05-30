@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,12 @@ namespace gilad.Scripts
         [SerializeField] private Image magnetCircle;
     
         [SerializeField] private Image ventCircle;
+
+        private void Awake()
+        {
+            shared = this;
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -42,16 +49,17 @@ namespace gilad.Scripts
             shared = this;
             zeroColor.a = alpha;
             print(originaleColor);
+            UpdateQuants();
         }
 
         // Update is called once per frame
         void Update()
         {
-        
         }
+        
         public static void UpdateQuants()
         {
-            // print(shared.zeroColor);
+            print(GameManager.NumVents);
             if(shared.magnetTxt != null)
             {
             

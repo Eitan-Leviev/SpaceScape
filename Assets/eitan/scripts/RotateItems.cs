@@ -88,33 +88,33 @@ public class RotateItems : MonoBehaviour
 
         if (Cur != null)
         {
-            if (Input.GetKeyDown(KeyCode.Delete))
-            {
-                if (Cur.CompareTag("Ball"))
-                {
-                    // todo change to compere tag
-                    return;
-                }
-
-                // print(cur.tag);
-                switch (Cur.tag)
-                {
-                    case "Wall":
-                        GameManager.NumWalls++;
-                        break;
-                    case "Magnet":
-                        GameManager.NumMagnets++;
-                        break;
-                    case "Vent":
-                        GameManager.NumVents++;
-                        break;
-                }
-
-                Destroy(Cur.gameObject);
-                Cur = null;
-                ValuesManager.UpdateQuants();
-                return;
-            }
+            // if (Input.GetKeyDown(KeyCode.Delete))
+            // {
+            //     if (Cur.CompareTag("Ball"))
+            //     {
+            //         // todo change to compere tag
+            //         return;
+            //     }
+            //
+            //     // print(cur.tag);
+            //     switch (Cur.tag)
+            //     {
+            //         case "Wall":
+            //             GameManager.NumWalls++;
+            //             break;
+            //         case "Magnet":
+            //             GameManager.NumMagnets++;
+            //             break;
+            //         case "Vent":
+            //             GameManager.NumVents++;
+            //             break;
+            //     }
+            //
+            //     Destroy(Cur.gameObject);
+            //     Cur = null;
+            //     ValuesManager.UpdateQuants();
+            //     return;
+            // }
 
             Cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);
         }

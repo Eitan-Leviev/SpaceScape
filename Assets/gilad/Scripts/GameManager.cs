@@ -31,7 +31,7 @@ namespace gilad.Scripts
             set
             {
                 shared._numTries = value;
-                ValuesManager.UpdateQuants();
+                // ValuesManager.UpdateQuants();
             }
         }
 
@@ -61,13 +61,15 @@ namespace gilad.Scripts
             var curLevelString = curSceneName.Substring(6, curSceneName.Length - 6); // given "level 122323" we take "122323"
             var curLevelNum = Int32.Parse(curLevelString);
             Level = curLevelNum;
+            shared = this;
         }
 
         void Start()
         {
-            shared = this;
-            ValuesManager.UpdateQuants();
+            print("ggg");
+            print(NumMagnets);
             HitEffect.Hits = Hits;
+            // ValuesManager.UpdateQuants();
         }
 
         public static void PlaceHit(Vector3 pos)

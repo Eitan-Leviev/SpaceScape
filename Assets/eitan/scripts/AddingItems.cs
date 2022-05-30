@@ -61,6 +61,7 @@ public class AddingItems : MonoBehaviour
         if (goodChoice)
         {
             Instantiate(item, itemsInitPos, quaternion.identity);
+            print(3);
             ValuesManager.UpdateQuants();
         }
 
