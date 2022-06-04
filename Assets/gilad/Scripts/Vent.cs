@@ -51,12 +51,11 @@ namespace gilad.Scripts
                 var ballRB = _ball.gameObject.GetComponent<Rigidbody2D>();
             
                 var normal = (_ball.position - transform.position);
-                // if (normal.magnitude > Math.Abs(_moveSpeed) || true)
-                // {
-                //     normal = normal.normalized;
-                // }
-                // normal *= _moveSpeed;
-                normal = normal.normalized;
+                if (normal.magnitude > Math.Abs(_moveSpeed))
+                {
+                    normal = normal.normalized;
+                }
+                // normal = normal.normalized;
                 normal *= _moveSpeed;
                 var curVelocity = ballRB.velocity;
                 ballRB.velocity = Vector2.MoveTowards(curVelocity, normal, turnSpeed);
