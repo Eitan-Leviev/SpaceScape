@@ -114,8 +114,8 @@ namespace gilad.Scripts
                 transform.Find("Lazer").gameObject.SetActive(false);
                 ball.transform.SetParent(null);
                 ball.GetComponent<CircleCollider2D>().isTrigger = false;
-                _animator.SetTrigger("Lanch");
-                explosionAnimator.SetTrigger("Smoke");
+                if(_animator != null)_animator.SetTrigger("Lanch");
+                if(explosionAnimator != null)explosionAnimator.SetTrigger("Smoke");
                 if(explosionAnimator2 != null)explosionAnimator2.SetTrigger("Smoke");
                 ball.Hit();
             }
