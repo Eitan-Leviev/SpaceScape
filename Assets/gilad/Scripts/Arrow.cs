@@ -11,6 +11,8 @@ namespace gilad.Scripts
         [SerializeField] private Transform backward;
 
         [SerializeField] private Animator explosionAnimator;
+        
+        [SerializeField] private Animator explosionAnimator2;
 
         private Animator _animator;
 
@@ -114,6 +116,7 @@ namespace gilad.Scripts
                 ball.GetComponent<CircleCollider2D>().isTrigger = false;
                 _animator.SetTrigger("Lanch");
                 explosionAnimator.SetTrigger("Smoke");
+                explosionAnimator2.SetTrigger("Smoke");
                 ball.Hit();
             }
         }

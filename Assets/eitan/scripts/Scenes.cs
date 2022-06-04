@@ -11,4 +11,9 @@ public class Scenes : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
         // SceneManager.LoadScene($"level {GameManager.Level}");
     }
+
+    public void LodeNewScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

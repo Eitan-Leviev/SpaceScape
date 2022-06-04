@@ -11,7 +11,13 @@ namespace gilad.Scripts
         public void ReloadScene()
         {
             HitAndReset.OnReset();
-            SceneManager.LoadScene($"level {GameManager.Level}");
+            var newName = $"level {GameManager.Level}";
+            if (SceneUtility.GetBuildIndexByScenePath(newName) < 0)
+            {
+                newName = "Ending";
+            }
+            print(newName);
+            SceneManager.LoadScene(newName);
             // SceneManager.LoadScene("game");
         }
     }

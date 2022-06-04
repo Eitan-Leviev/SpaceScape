@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/main/level 11.unity
     guid: 6e62ab67657136243ae4e1428cb3ffc2
+  - enabled: 1
+    path: Assets/main/Ending.unity
+    guid: 71dbe6683399ad640abe1451cc63dedd
   m_configObjects: {}
