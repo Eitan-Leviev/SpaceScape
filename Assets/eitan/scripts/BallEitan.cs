@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using gilad.Scripts;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BallEitan : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class BallEitan : MonoBehaviour
 
     private static BallEitan shared;
 
+    [SerializeField] private AudioClip[] meows;
+
+    [SerializeField] private AudioSource meow;
     [SerializeField] private AudioSource bomb;
     [SerializeField] private AudioSource moan;
 
@@ -80,6 +84,8 @@ public class BallEitan : MonoBehaviour
     {
         moan.Play();
         bomb.Play();
+        meow.clip = meows[Random.Range(0, meows.Length)];
+        meow.Play();
         editModeObj.GetComponent<Animator>().SetTrigger("fade");
         // GetComponent<AudioSource>().Play();
         // get direction
