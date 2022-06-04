@@ -22,6 +22,8 @@ public class BallEitan : MonoBehaviour
 
     private static BallEitan shared;
 
+    private TrailRenderer _trail;
+
     [SerializeField] private AudioClip[] meows;
 
     [SerializeField] private AudioSource meow;
@@ -44,6 +46,7 @@ public class BallEitan : MonoBehaviour
 
         initPos = transform.localPosition;
         initRotation = transform.localRotation;
+        _trail = GetComponent<TrailRenderer>();
     }
 
     // Update is called once per frame
@@ -87,6 +90,7 @@ public class BallEitan : MonoBehaviour
         meow.clip = meows[Random.Range(0, meows.Length)];
         meow.Play();
         editModeObj.GetComponent<Animator>().SetTrigger("fade");
+        _trail.enabled = true;
         // GetComponent<AudioSource>().Play();
         // get direction
         // var velocity = Vector2.left;
@@ -144,6 +148,7 @@ public class BallEitan : MonoBehaviour
         var t = transform;
         transform.parent = dir.transform;
         dir.transform.Find("Lazer").gameObject.SetActive(true);
+        _trail.enabled = false;
         gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
         t.localPosition = initPos;
         t.localRotation = initRotation;
