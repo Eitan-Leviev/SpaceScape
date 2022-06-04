@@ -60,7 +60,7 @@ public class AddingItems : MonoBehaviour
 
         if (goodChoice)
         {
-            Instantiate(item, itemsInitPos, quaternion.identity);
+            Instantiate(item, Camera.main.WorldToScreenPoint(Input.mousePosition), quaternion.identity);
             print(3);
             ValuesManager.UpdateQuants();
         }

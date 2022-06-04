@@ -16,9 +16,7 @@ namespace gilad.Scripts
             {
                 newName = "Ending";
             }
-            print(newName);
             SceneManager.LoadScene(newName);
-            // SceneManager.LoadScene("game");
         }
     }
 }
