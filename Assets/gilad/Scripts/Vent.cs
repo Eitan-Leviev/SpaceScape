@@ -9,6 +9,8 @@ namespace gilad.Scripts
         [SerializeField] private float turnSpeed = 0.01f;
         [SerializeField] private float speed = 1f;
 
+        [SerializeField] private AudioSource sound;
+
         private float _moveSpeed = 1f;
         // Start is called before the first frame update
 
@@ -32,6 +34,7 @@ namespace gilad.Scripts
             _ball = other.gameObject.transform;
             // if(_animator != null)_animator.SetBool("Fast", true);
             _moveSpeed = _ball.GetComponent<BallEitan>().initSpeed * speed;
+            if(sound != null)sound.Play();
         }
 
         private void OnTriggerExit2D(Collider2D other)
@@ -39,6 +42,7 @@ namespace gilad.Scripts
             // print("trigger exit");
             _ball = null;
             // if(_animator != null)_animator.SetBool("Fast", false);
+            if(sound != null)sound.Pause();
         }
 
         private void FixedUpdate()
