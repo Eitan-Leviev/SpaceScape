@@ -10,8 +10,10 @@ namespace gilad.Scripts
     
         [SerializeField] private Transform backward;
 
-    
-    
+        [SerializeField] private Animator explosionAnimator;
+
+        private Animator _animator;
+
         private float _dir = 0f;
     
         [SerializeField] private float _turnSpeed = 50f;
@@ -35,6 +37,7 @@ namespace gilad.Scripts
         {
             RotateItems.Cur = transform;
             RotateItems.Default = gameObject.transform;
+            _animator = GetComponent<Animator>();
             _instance = this;
         }
 
@@ -109,6 +112,8 @@ namespace gilad.Scripts
                 transform.Find("Lazer").gameObject.SetActive(false);
                 ball.transform.SetParent(null);
                 ball.GetComponent<CircleCollider2D>().isTrigger = false;
+                _animator.SetTrigger("Lanch");
+                explosionAnimator.SetTrigger("Smoke");
                 ball.Hit();
             }
         }
