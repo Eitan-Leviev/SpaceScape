@@ -53,34 +53,7 @@ public class BallEitan : MonoBehaviour
     void Update()
     {
         previousVelocity = rb.velocity;
-
-        // // hit
-        // if (!moving && Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     Hit();
-        // }
-
-        if (moving)
-        {
-            // slow down ball
-            
-            // // add to x
-            // x += Time.deltaTime * speed;
-            // var y = SlowDownFunc(x);
-            
-            // if (y <= 0)
-            // {
-            //     print("stop moving");
-            //     rb.velocity = Vector2.zero;
-            //     moving = false;
-            //     x = 0;
-            //     Arrow.Activate();
-            // }
-            // else
-            // {
-            //     rb.velocity = rb.velocity.normalized * (float) y;
-            // }
-        }
+        
     }
 
     public void Hit()
@@ -90,7 +63,7 @@ public class BallEitan : MonoBehaviour
         meow.clip = meows[Random.Range(0, meows.Length)];
         meow.Play();
         editModeObj.GetComponent<Animator>().SetTrigger("fade");
-        _trail.enabled = true;
+        
         // GetComponent<AudioSource>().Play();
         // get direction
         // var velocity = Vector2.left;
@@ -98,6 +71,8 @@ public class BallEitan : MonoBehaviour
         // give initial velocity
         rb.velocity = velocity * initSpeed;
         moving = true;
+        _trail.enabled  = true;
+        _trail.emitting = true;
         HitAndReset.OnHit();
         
     }
@@ -146,9 +121,11 @@ public class BallEitan : MonoBehaviour
     public void ResetPlayer()
     {
         var t = transform;
+        
+        // _trail.emitting = false;
         transform.parent = dir.transform;
+        _trail.emitting = false;
         dir.transform.Find("Lazer").gameObject.SetActive(true);
-        _trail.enabled = false;
         gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
         t.localPosition = initPos;
         t.localRotation = initRotation;
@@ -159,6 +136,7 @@ public class BallEitan : MonoBehaviour
         moving = false;
         Time.timeScale = 1;
         HitAndReset.OnReset();
+        _trail.Clear();
     }
 
     public static void BallReset()
