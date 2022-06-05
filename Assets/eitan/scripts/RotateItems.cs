@@ -58,12 +58,16 @@ public class RotateItems : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            // print("R");
+            print("R");
+            if (GameManager.Level == 2)
+            {
+                GameObject.Find("Canvas").GetComponent<TutorialManager>().rotateCannonTutorialEnding();
+            }
             _dir = -_turnSpeed;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            // print("L");
+            print("L");
             _dir = _turnSpeed;
         }
         else
