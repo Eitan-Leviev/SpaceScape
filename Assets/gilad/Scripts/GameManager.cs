@@ -72,6 +72,34 @@ namespace gilad.Scripts
             // ValuesManager.UpdateQuants();
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                if (SceneManager.GetActiveScene().name == "Ending")
+                {
+                    return;
+                }
+                // print("RRRR");
+                Time.timeScale = 1;
+                Level++;
+                Scenes.LoadCurrLevel();
+                // gameObject.SetActive(false);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                if (Level == 1)
+                {
+                    return;
+                }
+                // print("LLLl");
+                Time.timeScale = 1;
+                Level--;
+                Scenes.LoadCurrLevel();
+                // gameObject.SetActive(false);
+            }
+        }
+
         public static void PlaceHit(Vector3 pos)
         {
             if (shared.Hits.Count == 0)
