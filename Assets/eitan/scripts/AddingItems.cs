@@ -61,8 +61,14 @@ public class AddingItems : MonoBehaviour
         if (goodChoice)
         {
             Instantiate(item, Camera.main.WorldToScreenPoint(Input.mousePosition), quaternion.identity);
-            print(3);
+            // print(3);
             ValuesManager.UpdateQuants();
+
+            if (GameManager.Level == 3 && ! TutorialManager.LeftClickTutorialDoneFlag) // todo update it after adding scenes 
+            {
+                GameObject.Find("Canvas").transform.Find("tutor L click").gameObject.GetComponent<TutorialManager>().LeftClickTutorialEnding();
+                TutorialManager.LeftClickTutorialDoneFlag = true;
+            }
         }
 
         if (!IsActive)
