@@ -1404,6 +1404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tutor L click
       objectReference: {fileID: 0}
+    - target: {fileID: 5742558645832830349, guid: 72c83d658872f9d4f9eb5fbc24adab8c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72c83d658872f9d4f9eb5fbc24adab8c, type: 3}
 --- !u!1001 &8361250630239310785

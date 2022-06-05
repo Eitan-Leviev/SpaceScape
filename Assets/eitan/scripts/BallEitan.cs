@@ -102,8 +102,13 @@ public class BallEitan : MonoBehaviour
             Time.timeScale = 1;
             GameManager.Level++;
             GameManager.WinLevel();
-            gameObject.SetActive(false);
+            Invoke("SetActiveFalse", 0.07f);
         }
+    }
+
+    private void SetActiveFalse()
+    {
+        gameObject.SetActive(false);
     }
     
     private void OnMouseDown()
