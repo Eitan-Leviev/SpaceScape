@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class Open : MonoBehaviour
 {
     [SerializeField] private GameObject button;
+    [SerializeField] private GameObject keysCheatTxt;
+    [SerializeField] private GameObject canvas;
     
+
 
     public void ActivateStartButton()
     {
         button.SetActive(true);
+        keysCheatTxt.SetActive(true);
+        canvas.SetActive(true);
     }
 
     public void LoadGameScene()
