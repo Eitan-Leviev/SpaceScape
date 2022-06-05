@@ -67,11 +67,10 @@ public class AddingItems : MonoBehaviour
                 TutorialManager.LeftClickTutorialDoneFlag = true;
             }
             
-            // if (GameManager.Level == 4 ) // todo update it after adding scenes 
-            // {
-            //     GameObject.Find("Canvas").transform.Find("tutor L click").gameObject.GetComponent<TutorialManager>().LeftClickTutorialEnding();
-            //     TutorialManager.LeftClickTutorialDoneFlag = true;
-            // }
+            if (GameManager.Level == 4) // todo update it after adding scenes 
+            {
+                GameObject.Find("Canvas").transform.Find("tutor L click").gameObject.GetComponent<TutorialManager>().LastTutorEnding();
+            }
         }
 
         if (!IsActive)

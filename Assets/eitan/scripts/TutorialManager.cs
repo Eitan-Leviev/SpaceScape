@@ -54,4 +54,9 @@ public class TutorialManager : MonoBehaviour
     {
         scroller.SetActive(false);
     }
+    
+    public void LastTutorEnding()
+    {
+        GetComponent<Animator>().SetBool("done", false);
+    }
 }

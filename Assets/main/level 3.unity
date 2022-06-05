@@ -700,6 +700,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3744806034881817197, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2282.2468
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744806034881817197, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 476.5099
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744806034881817197, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -276.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744806034881817197, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -64.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3744806034881817202, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_Text
+      value: 'MIAOW...
+
+        what is that tool?'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
 --- !u!224 &962239673 stripped
