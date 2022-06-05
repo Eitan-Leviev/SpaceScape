@@ -11,6 +11,9 @@ public class TutorialManager : MonoBehaviour
     
     public static bool rotateCannonTutorialDoneFlag = false;
 
+    [SerializeField] private GameObject scroller;
+    
+
     private void Awake()
     {
         canvas = GameObject.Find("Canvas");
@@ -21,7 +24,11 @@ public class TutorialManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            rotateCannonTutorialEnding();
+            ScrollOn();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ScrollOff();
         }
     }
 
@@ -36,5 +43,15 @@ public class TutorialManager : MonoBehaviour
         GameObject.Find("tutor scroll canon").GetComponent<Animator>().SetTrigger("fade out");
         // R click appear 
         GameObject.Find("tutor R click").GetComponent<Animator>().SetTrigger("fade in");
+    }
+
+    public void ScrollOn()
+    {
+        scroller.SetActive(true);
+    }
+    
+    public void ScrollOff()
+    {
+        scroller.SetActive(false);
     }
 }
