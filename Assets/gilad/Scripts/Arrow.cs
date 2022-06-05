@@ -53,8 +53,6 @@ namespace gilad.Scripts
         {
             if (Input.GetMouseButtonDown(1))
             {
-                print("right click");
-                // print("PP");
                 if (!ball.moving)
                 {
                     Time.timeScale = 2;
@@ -65,7 +63,6 @@ namespace gilad.Scripts
                     var find = GameObject.Find("ball");
                     if (!find) return;
                     var ballScript = find.gameObject.GetComponent<BallEitan>();
-                    print("i called reset");
                     ballScript.ResetPlayer();
                 }
             }
@@ -87,13 +84,12 @@ namespace gilad.Scripts
         {
             if(isActive)
             {
-                // transform.Find("LAZER").gameObject.SetActive(false);
                 transform.Find("Lazer").gameObject.SetActive(false);
                 ball.transform.SetParent(null);
                 ball.GetComponent<CircleCollider2D>().isTrigger = false;
                 if(_animator != null)_animator.SetTrigger("Lanch");
                 if(explosionAnimator != null)explosionAnimator.SetTrigger("Smoke");
-                if(explosionAnimator2 != null)explosionAnimator2.SetTrigger("Smoke");
+                // if(explosionAnimator2 != null)explosionAnimator2.SetTrigger("Smoke");
                 ball.Hit();
             }
         }

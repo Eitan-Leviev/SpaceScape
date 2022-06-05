@@ -116,7 +116,6 @@ public class DragAndDrop : MonoBehaviour
     
     private void OnMouseDown()
     {
-        // print(1);
         _offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         isDragging = true;
         RotateItems.Cur = transform;

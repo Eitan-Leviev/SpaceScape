@@ -23,7 +23,7 @@ public class RotateItems : MonoBehaviour
         get => cur;
         set
         {
-            if (value == null || value.tag == "Magnet" || value.tag == "Vent")
+            if (value == null || value.CompareTag("Magnet") || value.CompareTag("Vent"))
             {
                 value = Default;
             }

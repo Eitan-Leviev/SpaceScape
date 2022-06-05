@@ -55,8 +55,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     private void Start()
     {
-        // print(transform.parent.name);
-        // print(transform.name);
+
         myColor = _images[0].color;
         zeroColor = myColor;
         zeroColor.a = alpha;
@@ -105,14 +104,13 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        // print(1);
-        // if(!Active) return;
+ 
         flipper = 2; // grow
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        // print(2);
+ 
         flipper = 1; // shrink
     }
 }

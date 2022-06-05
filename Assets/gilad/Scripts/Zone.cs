@@ -33,7 +33,6 @@ namespace gilad.Scripts
             int i = 0;
             foreach (var zone in allZones)
             {
-                // print(i++);
                 zone.GetComponent<CircleCollider2D>().enabled = true;
             }
         }

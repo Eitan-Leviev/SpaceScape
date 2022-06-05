@@ -40,7 +40,6 @@ namespace gilad.Scripts
         private void OnTriggerExit2D(Collider2D other)
         {
             _ball = null;
-            // if(_animator != null)_animator.SetBool("Fast", false);
             if(sound != null)sound.Pause();
         }
 

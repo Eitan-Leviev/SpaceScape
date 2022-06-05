@@ -36,7 +36,6 @@ public class BallEitan : MonoBehaviour
 
     private void Awake()
     {
-        // Time.timeScale = 2;
         Time.timeScale = 1;
         shared = this;
         editModeObj = GameObject.Find("grid");
@@ -58,16 +57,12 @@ public class BallEitan : MonoBehaviour
 
     public void Hit()
     {
-        print("hit");
         moan.Play();
         bomb.Play();
         meow.clip = meows[Random.Range(0, meows.Length)];
         meow.Play();
         editModeObj.GetComponent<Animator>().SetTrigger("fade");
-        
-        // GetComponent<AudioSource>().Play();
         // get direction
-        // var velocity = Vector2.left;
         Vector3 velocity = Arrow.GetDirection();
         // give initial velocity
         rb.velocity = velocity * initSpeed;
@@ -90,8 +85,6 @@ public class BallEitan : MonoBehaviour
         Vector2 contactNormal = contact.normal;
 
         Vector2 newVelocity = Vector2.Reflect(previousVelocity, contactNormal);
-        // print(previousVelocity);
-        // print(newVelocity);
 
         rb.velocity = newVelocity;
         
@@ -115,15 +108,12 @@ public class BallEitan : MonoBehaviour
     
     private void OnMouseDown()
     {
-        // print("j");
         RotateItems.Cur = dir.transform;
     }
 
     public void ResetPlayer()
     {
         var t = transform;
-        print("reset");
-        // _trail.emitting = false;
         transform.parent = dir.transform;
         _trail.emitting = false;
         dir.transform.Find("Lazer").gameObject.SetActive(true);

@@ -66,10 +66,7 @@ namespace gilad.Scripts
 
         void Start()
         {
-            // print("ggg");
-            // print(NumMagnets);
             HitEffect.Hits = Hits;
-            // ValuesManager.UpdateQuants();
         }
 
         private void Update()
@@ -80,11 +77,9 @@ namespace gilad.Scripts
                 {
                     return;
                 }
-                // print("RRRR");
                 Time.timeScale = 1;
                 Level++;
                 Scenes.LoadCurrLevel();
-                // gameObject.SetActive(false);
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
@@ -92,11 +87,9 @@ namespace gilad.Scripts
                 {
                     return;
                 }
-                // print("LLLl");
                 Time.timeScale = 1;
                 Level--;
                 Scenes.LoadCurrLevel();
-                // gameObject.SetActive(false);
             }
         }
 
