@@ -33,6 +33,12 @@ namespace gilad.Scripts
     
         [SerializeField] private Image ventCircle;
 
+        [SerializeField] private ButtonHovering magnetHovering;
+        
+        [SerializeField] private ButtonHovering wallHovering;
+        
+        [SerializeField] private ButtonHovering ventHovering;
+
         private void Awake()
         {
             shared = this;
@@ -67,12 +73,14 @@ namespace gilad.Scripts
                 {
                     shared.magnetTxt.faceColor = shared.zeroColor;
                     shared.magnetCircle.color = shared.zeroCircleColor;
+                    shared.magnetHovering.IsZero = true;
                     // print(shared.magnetCircle.color);
                 }
                 else
                 {
                     shared.magnetTxt.faceColor = shared.originaleColor;
                     shared.magnetCircle.color = shared.originalCircleColor;
+                    shared.magnetHovering.IsZero = false;
                 }
                 shared.magnetTxt.text = GameManager.NumMagnets.ToString();
             }
@@ -83,11 +91,13 @@ namespace gilad.Scripts
                 {
                     shared.ventsTxt.faceColor = shared.zeroColor;
                     shared.ventCircle.color = shared.zeroCircleColor;
+                    shared.ventHovering.IsZero = true;
                 }
                 else
                 {
                     shared.ventsTxt.faceColor = shared.originaleColor;
                     shared.ventCircle.color = shared.originalCircleColor;
+                    shared.ventHovering.IsZero = false;
                 }
                 shared.ventsTxt.text = GameManager.NumVents.ToString();
             }
@@ -98,11 +108,13 @@ namespace gilad.Scripts
                 {
                     shared.wallTxt.faceColor = shared.zeroColor;
                     shared.wallCircle.color = shared.zeroCircleColor;
+                    shared.wallHovering.IsZero = true;
                 }
                 else
                 {
                     shared.wallTxt.faceColor = shared.originaleColor;
                     shared.wallCircle.color = shared.originalCircleColor;
+                    shared.wallHovering.IsZero = false;
                 }
                 shared.wallTxt.text = GameManager.NumWalls.ToString();
             }

@@ -8,11 +8,42 @@ using UnityEngine.UI;
 public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public static bool Active { set; get; }
-    
-    
+    [SerializeField] private Image[] _images;
+
+    private Color32 zeroColor;
+    private Color32 myColor;
     public float speed = 2; // Units per second
     private int flipper = 0; // 1 to shrink, 2 to grow, 0 do nothing
+
+    [SerializeField] private byte alpha = 75;
+    
+    private bool isZero = false;
+
+    public bool IsZero
+    {
+        get => isZero;
+        set
+        {
+            isZero = value;
+            if (value)
+            {
+                foreach (var _image in _images)
+                {
+                    _image.color = zeroColor;
+                }
+            }
+            else
+            {
+                foreach (var _image in _images)
+                {
+                    _image.color = myColor;
+                }
+            }
+        }
+    }
+
     [SerializeField] private float maxScale = 1.4f;
+
     private Vector3 initScale;
     // private RectTransform _transform;
 
@@ -20,6 +51,15 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         Active = true;
         initScale = transform.localScale;
+    }
+
+    private void Start()
+    {
+        print(transform.parent.name);
+        print(transform.name);
+        myColor = _images[0].color;
+        zeroColor = myColor;
+        zeroColor.a = alpha;
     }
 
 
@@ -44,7 +84,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
                 transform.localScale = initScale;
             }
         }
-        if(!Active) return;
+        if (!Active || IsZero) return;
         if (flipper == 2) // grow
         {
             if (transform.localScale.y < initScale.y * maxScale)
@@ -69,11 +109,10 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         // if(!Active) return;
         flipper = 2; // grow
     }
-    
+
     public void OnPointerExit(PointerEventData eventData)
     {
         // print(2);
         flipper = 1; // shrink
     }
-    
 }
