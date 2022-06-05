@@ -72,6 +72,7 @@ namespace gilad.Scripts
 
             if (Input.GetMouseButtonDown(1))
             {
+                print("PP");
                 if (!BallEitan.moving)
                 {
                     Time.timeScale = 2;

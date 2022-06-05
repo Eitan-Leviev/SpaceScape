@@ -66,8 +66,8 @@ namespace gilad.Scripts
 
         void Start()
         {
-            print("ggg");
-            print(NumMagnets);
+            // print("ggg");
+            // print(NumMagnets);
             HitEffect.Hits = Hits;
             // ValuesManager.UpdateQuants();
         }

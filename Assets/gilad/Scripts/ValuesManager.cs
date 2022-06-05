@@ -48,7 +48,7 @@ namespace gilad.Scripts
             zeroCircleColor.a = alpha;
             shared = this;
             zeroColor.a = alpha;
-            print(originaleColor);
+            // print(originaleColor);
             UpdateQuants();
         }
 
@@ -59,7 +59,7 @@ namespace gilad.Scripts
         
         public static void UpdateQuants()
         {
-            print(GameManager.NumVents);
+            // print(GameManager.NumVents);
             if(shared.magnetTxt != null)
             {
             
@@ -67,7 +67,7 @@ namespace gilad.Scripts
                 {
                     shared.magnetTxt.faceColor = shared.zeroColor;
                     shared.magnetCircle.color = shared.zeroCircleColor;
-                    print(shared.magnetCircle.color);
+                    // print(shared.magnetCircle.color);
                 }
                 else
                 {
