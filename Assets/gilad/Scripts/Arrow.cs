@@ -51,51 +51,27 @@ namespace gilad.Scripts
 
         private void Update()
         {
-            // if (Input.GetKey(KeyCode.RightArrow))
-            // {
-            //     _dir = -_turnSpeed;
-            // }
-            // else if (Input.GetKey(KeyCode.LeftArrow))
-            // {
-            //     _dir = _turnSpeed;
-            // }
-            // else
-            // {
-            //     _dir = 0f;
-            // }
-
-            // if (Input.GetKeyDown(KeyCode.Space))
-            // {
-            //     // gameObject.GetComponent<Animator>().SetTrigger("Shoot");
-            //     Hit();
-            // }
-
             if (Input.GetMouseButtonDown(1))
             {
-                print("PP");
-                if (!BallEitan.moving)
+                print("right click");
+                // print("PP");
+                if (!ball.moving)
                 {
                     Time.timeScale = 2;
                     Hit();
                 }
                 else
                 {
-                    var ball = GameObject.Find("ball");
-                    if (ball)
-                    {
-                        var ballScript = ball.gameObject.GetComponent<BallEitan>();
-                        ballScript.ResetPlayer();
-                    }
+                    var find = GameObject.Find("ball");
+                    if (!find) return;
+                    var ballScript = find.gameObject.GetComponent<BallEitan>();
+                    print("i called reset");
+                    ballScript.ResetPlayer();
                 }
             }
         
         }
-
-        // private void FixedUpdate()
-        // {
-        //     CurrRotate.curr.Rotate(0,0,_dir * Time.fixedDeltaTime);
-        // }
-
+        
         public static void Activate()
         {
             _instance.gameObject.SetActive(true);

@@ -38,7 +38,6 @@ public class AddingItems : MonoBehaviour
                     item = wall;
                 }
                 else goodChoice = false;
-
                 break;
             case 2:
                 if (GameManager.NumMagnets-- > 0)
@@ -46,7 +45,6 @@ public class AddingItems : MonoBehaviour
                     item = magnet;
                 }
                 else goodChoice = false;
-
                 break;
             case 3:
                 if (GameManager.NumVents-- > 0)
@@ -54,7 +52,6 @@ public class AddingItems : MonoBehaviour
                     item = ventilator;
                 }
                 else goodChoice = false;
-
                 break;
         }
 

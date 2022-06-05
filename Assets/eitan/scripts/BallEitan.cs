@@ -17,7 +17,7 @@ public class BallEitan : MonoBehaviour
     public float initSpeed = 20;
     // public float speed = 1;
     private float x = 0;
-    public static bool moving = false;
+    public  bool moving = false;
     private Vector2 previousVelocity;
 
     private static BallEitan shared;
@@ -58,6 +58,7 @@ public class BallEitan : MonoBehaviour
 
     public void Hit()
     {
+        print("hit");
         moan.Play();
         bomb.Play();
         meow.clip = meows[Random.Range(0, meows.Length)];
@@ -121,7 +122,7 @@ public class BallEitan : MonoBehaviour
     public void ResetPlayer()
     {
         var t = transform;
-        
+        print("reset");
         // _trail.emitting = false;
         transform.parent = dir.transform;
         _trail.emitting = false;
