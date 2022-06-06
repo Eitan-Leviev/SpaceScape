@@ -25,6 +25,7 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         set
         {
             isZero = value;
+            // print(transform.parent.name);
             if (value)
             {
                 foreach (var _image in _images)
@@ -51,14 +52,14 @@ public class ButtonHovering : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         Active = true;
         initScale = transform.localScale;
+        myColor = _images[0].color;
+        zeroColor = myColor;
+        zeroColor.a = alpha;
     }
 
     private void Start()
     {
-
-        myColor = _images[0].color;
-        zeroColor = myColor;
-        zeroColor.a = alpha;
+        print(_images[0].color + transform.parent.name);
     }
 
 
