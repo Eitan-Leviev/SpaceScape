@@ -61,13 +61,13 @@ public class AddingItems : MonoBehaviour
             // print(3);
             ValuesManager.UpdateQuants();
 
-            if (GameManager.Level == 3 && ! TutorialManager.LeftClickTutorialDoneFlag) // todo update it after adding scenes 
+            if (GameManager.Level == 6 && ! TutorialManager.LeftClickTutorialDoneFlag) // todo update it after adding scenes 
             {
                 GameObject.Find("Canvas").transform.Find("tutor L click").gameObject.GetComponent<TutorialManager>().LeftClickTutorialEnding();
                 TutorialManager.LeftClickTutorialDoneFlag = true;
             }
             
-            if (GameManager.Level == 4) // todo update it after adding scenes 
+            if (GameManager.Level == 7) // todo update it after adding scenes 
             {
                 GameObject.Find("Canvas").transform.Find("tutor L click").gameObject.GetComponent<TutorialManager>().LastTutorEnding();
             }

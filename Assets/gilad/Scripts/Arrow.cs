@@ -61,7 +61,7 @@ namespace gilad.Scripts
 
         private void Update()
         {
-            if (GameManager.Level == 13 && enableInput)
+            if (GameManager.Level == 12 && enableInput)
             {
                 Invoke("HitAfterTime", 1.5f);
                 enableInput = false;
