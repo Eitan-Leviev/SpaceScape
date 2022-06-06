@@ -4,6 +4,10 @@ namespace gilad.Scripts
 {
     public class Arrow : MonoBehaviour
     {
+        // [SerializeField] private int timeOfDemo = 7;
+
+        private bool enableInput = true;
+
         private static Arrow _instance;
 
         [SerializeField] private Transform forward;
@@ -49,8 +53,25 @@ namespace gilad.Scripts
             return _instance.forward.position - _instance.backward.position;
         }
 
+        private void HitAfterTime()
+        {
+            Time.timeScale = 2;
+            Hit();
+        }
+
         private void Update()
         {
+            if (GameManager.Level == 13 && enableInput)
+            {
+                Invoke("HitAfterTime", 1.5f);
+                enableInput = false;
+            }
+
+            if (! enableInput)
+            {
+                return;
+            }
+            
             if (Input.GetMouseButtonDown(1))
             {
                 if (!ball.moving)

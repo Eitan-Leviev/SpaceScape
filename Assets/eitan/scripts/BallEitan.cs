@@ -61,7 +61,10 @@ public class BallEitan : MonoBehaviour
         bomb.Play();
         meow.clip = meows[Random.Range(0, meows.Length)];
         meow.Play();
-        editModeObj.GetComponent<Animator>().SetTrigger("fade");
+        if (editModeObj)
+        {
+            editModeObj.GetComponent<Animator>().SetTrigger("fade");
+        }
         // get direction
         Vector3 velocity = Arrow.GetDirection();
         // give initial velocity
@@ -127,7 +130,10 @@ public class BallEitan : MonoBehaviour
         t.localRotation = initRotation;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
-        editModeObj.GetComponent<Animator>().SetTrigger("back");
+        if (editModeObj)
+        {
+            editModeObj.GetComponent<Animator>().SetTrigger("back");
+        }
         RotateItems.Cur = transform.parent;
         moving = false;
         Time.timeScale = 1;
