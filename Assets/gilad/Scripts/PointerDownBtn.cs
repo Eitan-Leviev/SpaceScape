@@ -10,7 +10,10 @@ namespace gilad.Scripts
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (Input.GetMouseButtonDown(1)) return;
             AddingItems.Create(code);
         }
+        
+        
     }
 }
