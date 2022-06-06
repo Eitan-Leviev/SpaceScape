@@ -71,6 +71,11 @@ namespace gilad.Scripts
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+            
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if (SceneManager.GetActiveScene().name == "Ending")
