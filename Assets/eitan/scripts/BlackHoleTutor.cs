@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using gilad.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlackHoleTutor : MonoBehaviour
 {
@@ -20,6 +21,15 @@ public class BlackHoleTutor : MonoBehaviour
         canvas.SetActive(false);
         Time.timeScale = 1;
         GameManager.Level++;
-        GameManager.WinLevel();
+        
+        // reload scene 
+        HitAndReset.OnReset();
+        var newName = $"level {GameManager.Level}";
+        if (SceneUtility.GetBuildIndexByScenePath(newName) < 0)
+        {
+            newName = "Ending";
+        }
+        SceneManager.LoadScene(newName);
+        // GameManager.WinLevel();
     }
 }

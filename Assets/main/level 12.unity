@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f04131b0a2d7e48899e23d115ce0fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeOfDemo: 7
+  timeOfDemo: 12
 --- !u!1001 &505933505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -957,7 +957,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: That's a black hole
+  m_Text: Black Hole
 --- !u!222 &1440055875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1153,7 +1153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 120}
+  m_AnchoredPosition: {x: 5, y: 112.8}
   m_SizeDelta: {x: 2282.2468, y: 745.2697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853875396
