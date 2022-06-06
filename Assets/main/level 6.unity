@@ -480,6 +480,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grid
       objectReference: {fileID: 0}
+    - target: {fileID: 8698604526318533193, guid: 823c89998a5bc6f4e959ad314ff9cf68, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8698604526318533195, guid: 823c89998a5bc6f4e959ad314ff9cf68, type: 3}
       propertyPath: m_RootOrder
       value: 10
