@@ -105,6 +105,7 @@ namespace gilad.Scripts
         {
             if(isActive)
             {
+                GetComponent<Orah>().TurnOf();
                 transform.Find("Lazer").gameObject.SetActive(false);
                 ball.transform.SetParent(null);
                 ball.GetComponent<CircleCollider2D>().isTrigger = false;
