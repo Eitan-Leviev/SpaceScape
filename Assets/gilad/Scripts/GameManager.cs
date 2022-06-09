@@ -102,11 +102,12 @@ namespace gilad.Scripts
         {
             if (shared.Hits.Count == 0)
             {
-                print("now!");
+                // print(1);
                 Instantiate(shared.hittEffectInst, pos, Quaternion.identity);
             }
             else
             {
+                // print(2);
                 var nextHit = shared.Hits.Last.Value;
                 nextHit.transform.position = pos;
                 shared.Hits.RemoveLast();

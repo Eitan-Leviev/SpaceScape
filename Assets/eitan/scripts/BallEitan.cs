@@ -94,6 +94,8 @@ public class BallEitan : MonoBehaviour
         previousVelocity = newVelocity;
         
         GameManager.PlaceHit(transform.position);
+        
+        print("yo");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
