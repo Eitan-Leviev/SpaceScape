@@ -39,7 +39,6 @@ public class RotateItems : MonoBehaviour
             if(orah != null) orah.TurnOf();
             // if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
             cur = value;
-            print("hello");
             orah = cur.GetComponent<Orah>();
             if(orah != null) orah.TurnOn();
             // value.GetComponent<SpriteRenderer>().color = shared.editColor;
@@ -73,7 +72,7 @@ public class RotateItems : MonoBehaviour
         {
             stillCurr = true;
             counterToRemove = 0f;
-            print("R");
+            // print("R");
             if (GameManager.Level == 2)
             {
                 GameObject.Find("Canvas").GetComponent<TutorialManager>().rotateCannonTutorialEnding();
@@ -84,7 +83,7 @@ public class RotateItems : MonoBehaviour
         {
             counterToRemove = 0f;
             stillCurr = true;
-            print("L");
+            // print("L");
             _dir = _turnSpeed;
         }
         else

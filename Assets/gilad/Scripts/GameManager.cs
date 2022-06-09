@@ -102,6 +102,7 @@ namespace gilad.Scripts
         {
             if (shared.Hits.Count == 0)
             {
+                print("now!");
                 Instantiate(shared.hittEffectInst, pos, Quaternion.identity);
             }
             else
