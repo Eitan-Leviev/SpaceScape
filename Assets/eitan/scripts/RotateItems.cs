@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class RotateItems : MonoBehaviour
 {
-    [SerializeField] private Color editColor;
+    private bool stillCurr = false;
+    
+    public static bool NeedToCur { get; set; }
+    [SerializeField] private float removeIn = 0.5f;
+
+    private float counterToRemove = 0;
 
     private static Transform cur;
 
@@ -23,6 +28,7 @@ public class RotateItems : MonoBehaviour
         get => cur;
         set
         {
+            if (shared.stillCurr) return;
             if (value == null || value.CompareTag("Magnet") || value.CompareTag("Vent"))
             {
                 value = Default;
@@ -65,6 +71,8 @@ public class RotateItems : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
+            stillCurr = true;
+            counterToRemove = 0f;
             print("R");
             if (GameManager.Level == 2)
             {
@@ -74,59 +82,21 @@ public class RotateItems : MonoBehaviour
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
+            counterToRemove = 0f;
+            stillCurr = true;
             print("L");
             _dir = _turnSpeed;
         }
         else
         {
+            stillCurr = false;
+            counterToRemove += Time.deltaTime;
+            if (NeedToCur && counterToRemove > removeIn) Cur = Default;
             _dir = 0f;
         }
 
-        // if (Input.GetKey(KeyCode.RightArrow))
-        // {
-        //     print("R");
-        //     _dir = -_turnSpeed;
-        // }
-        // else if (Input.GetKey(KeyCode.LeftArrow))
-        // {
-        //     print("L");
-        //     _dir = _turnSpeed;
-        // }
-        // else
-        // {
-        //     _dir = 0f;
-        // }
-
         if (Cur != null)
         {
-            // if (Input.GetKeyDown(KeyCode.Delete))
-            // {
-            //     if (Cur.CompareTag("Ball"))
-            //     {
-            //         // todo change to compere tag
-            //         return;
-            //     }
-            //
-            //     // print(cur.tag);
-            //     switch (Cur.tag)
-            //     {
-            //         case "Wall":
-            //             GameManager.NumWalls++;
-            //             break;
-            //         case "Magnet":
-            //             GameManager.NumMagnets++;
-            //             break;
-            //         case "Vent":
-            //             GameManager.NumVents++;
-            //             break;
-            //     }
-            //
-            //     Destroy(Cur.gameObject);
-            //     Cur = null;
-            //     ValuesManager.UpdateQuants();
-            //     return;
-            // }
-
             Cur.Rotate(0, 0, _dir * Time.fixedDeltaTime);
         }
     }
