@@ -580,8 +580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d15d35b6e2f2bd4b8b1e7172703c085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switchMode: 0
-  orah: {fileID: 21300000, guid: fcbab7f729d7c4d409602ba555512445, type: 3}
-  renderer: {fileID: 0}
-  original: {fileID: 0}
+  switchMode: 1
+  orah: {fileID: 21300000, guid: 23b6d303a83acbb479158fb250d129b1, type: 3}
+  renderer: {fileID: 2091100677749973014}
+  original: {fileID: 21300000, guid: 794723bfae8e07542a1b1518b84a6350, type: 3}
   back: {fileID: 888015946717642711}
