@@ -134,10 +134,28 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
+    private void OnMouseEnter()
+    {
+        if (RotateItems.Cur != transform)
+        {
+            // print("in");
+            // todo add new sprite
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (RotateItems.Cur != transform)
+        {
+            // print("out");
+            // todo add new sprite
+        }
+    }
+
     private void StopDrag()
     {
         isDragging = false;
-        RotateItems.Cur = RotateItems.Default;
+        // RotateItems.Cur = RotateItems.Default;
         if (isTrash)
         {
             switch (gameObject.tag)

@@ -27,8 +27,15 @@ public class RotateItems : MonoBehaviour
             {
                 value = Default;
             }
+
+            Orah orah = null;
+            if(cur != null) orah = cur.GetComponent<Orah>();
+            if(orah != null) orah.TurnOf();
             // if (cur != null) cur.GetComponent<SpriteRenderer>().color = Color.white;
             cur = value;
+            print("hello");
+            orah = cur.GetComponent<Orah>();
+            if(orah != null) orah.TurnOn();
             // value.GetComponent<SpriteRenderer>().color = shared.editColor;
         }
     }
