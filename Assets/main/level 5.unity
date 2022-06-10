@@ -1727,19 +1727,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1016379027, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 185.18124
+      value: 213.18124
       objectReference: {fileID: 0}
     - target: {fileID: 1149452846, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 184.5
+      value: 212.5
       objectReference: {fileID: 0}
     - target: {fileID: 1625539723, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 208
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 1664098493, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 184.5
+      value: 212.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144329409, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 172
       objectReference: {fileID: 0}
     - target: {fileID: 2685870580307926479, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_IsActive
