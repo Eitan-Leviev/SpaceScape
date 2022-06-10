@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 172
       objectReference: {fileID: 0}
+    - target: {fileID: 2144329411, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
+      propertyPath: m_Text
+      value: part 5 | 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3744806033480312361, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_Name
       value: Canvas
