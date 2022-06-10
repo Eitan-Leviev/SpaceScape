@@ -111,6 +111,7 @@ namespace gilad.Scripts
                 ball.GetComponent<CircleCollider2D>().isTrigger = false;
                 if(_animator != null)_animator.SetTrigger("Lanch");
                 if(explosionAnimator != null)explosionAnimator.SetTrigger("Smoke");
+                Shake.ShakeMe();
                 // if(explosionAnimator2 != null)explosionAnimator2.SetTrigger("Smoke");
                 ball.Hit();
             }
