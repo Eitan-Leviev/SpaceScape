@@ -205,7 +205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149452846, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1625539723, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_RootOrder
@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2144329409, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2144329409, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1229,7 +1229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use it wisely
+  m_Text: Use wisely
 --- !u!222 &1853875397
 CanvasRenderer:
   m_ObjectHideFlags: 0
