@@ -147,7 +147,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (RotateItems.Cur == transform)
+        if (RotateItems.Cur == transform && !isDragging)
         {
             RotateItems.NeedToCur = true;
         }

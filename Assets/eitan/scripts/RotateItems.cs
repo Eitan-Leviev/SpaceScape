@@ -90,7 +90,14 @@ public class RotateItems : MonoBehaviour
         {
             stillCurr = false;
             counterToRemove += Time.deltaTime;
-            if (NeedToCur && counterToRemove > removeIn) Cur = Default;
+            if (NeedToCur && counterToRemove > removeIn)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (hit.transform == null)
+                {
+                    Cur = Default;
+                }
+            }
             _dir = 0f;
         }
 

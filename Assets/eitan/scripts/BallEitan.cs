@@ -83,6 +83,11 @@ public class BallEitan : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D other)
     {
+        var skweez = other.gameObject.GetComponent<Skweez>();
+        if (skweez != null)
+        {
+            skweez.DoSkweez();
+        }
         ContactPoint2D contact = other.contacts[0];
 
         Vector2 contactNormal = contact.normal;
