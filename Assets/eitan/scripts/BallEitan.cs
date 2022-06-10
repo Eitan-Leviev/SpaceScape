@@ -107,13 +107,21 @@ public class BallEitan : MonoBehaviour
     {
         if (other.name == "target")
         {
+            // portal anim
+            other.gameObject.GetComponent<Animator>().SetTrigger("portal winning");
+            
             var canvas = GameObject.Find("Canvas");
             canvas.SetActive(false);
             Time.timeScale = 1;
             GameManager.Level++;
-            GameManager.WinLevel();
+            Invoke("Sus", 1f);
             Invoke("SetActiveFalse", 0.07f);
         }
+    }
+
+    public void Sus()
+    {
+        GameManager.WinLevel();
     }
 
     private void SetActiveFalse()
