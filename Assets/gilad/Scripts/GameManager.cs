@@ -98,6 +98,28 @@ namespace gilad.Scripts
             }
         }
 
+        public void LevelUp()
+        {
+            if (SceneManager.GetActiveScene().name == "Ending")
+            {
+                return;
+            }
+            Time.timeScale = 1;
+            Level++;
+            Scenes.LoadCurrLevel();
+        }
+
+        public void LevelDown()
+        {
+            if (Level == 1)
+            {
+                return;
+            }
+            Time.timeScale = 1;
+            Level--;
+            Scenes.LoadCurrLevel();
+        }
+        
         public static void PlaceHit(Vector3 pos)
         {
             if (shared.Hits.Count == 0)
