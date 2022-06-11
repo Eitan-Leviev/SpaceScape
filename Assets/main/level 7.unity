@@ -1091,7 +1091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -274.1, y: -83}
+  m_AnchoredPosition: {x: -268, y: -48}
   m_SizeDelta: {x: 2282.2468, y: 476.5099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1059914295
@@ -1382,7 +1382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5, y: -182.7}
+  m_AnchoredPosition: {x: -205.9, y: -72}
   m_SizeDelta: {x: 3530.2698, y: 476.5099}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1231804587
@@ -1412,7 +1412,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 178
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1420,7 +1420,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Scroll the mouse-wheel
 
-    while mouse is hovering above wall'
+    when hovering above wall'
 --- !u!222 &1231804588
 CanvasRenderer:
   m_ObjectHideFlags: 0
