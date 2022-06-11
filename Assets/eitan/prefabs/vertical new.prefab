@@ -650,3 +650,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skweez: {fileID: 1534074146517693607}
+  duration: 0.5
+  magnitude: 0.25
+  skweezer: {fileID: 3823565214347542476}

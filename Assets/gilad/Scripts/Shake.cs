@@ -21,7 +21,6 @@ namespace gilad.Scripts
 
         public static void ShakeMe()
         {
-            
             if (shared == null) return;
             shared.StartCoroutine(shared.CameraShake());
         }

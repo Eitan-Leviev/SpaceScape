@@ -371,6 +371,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skweez: {fileID: 2987726452002376120}
+  duration: 0.5
+  magnitude: 0.35
+  skweezer: {fileID: 1931631623819943775}
 --- !u!1 &8265138157109017936
 GameObject:
   m_ObjectHideFlags: 0

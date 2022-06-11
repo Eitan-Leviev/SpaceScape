@@ -32,6 +32,8 @@ public class BallEitan : MonoBehaviour
     
     [SerializeField] private AudioSource winningPortal;
 
+    [SerializeField] private int meowDoration = 3;
+
     private GameObject editModeObj;
     
 
@@ -61,8 +63,12 @@ public class BallEitan : MonoBehaviour
     {
         moan.Play();
         bomb.Play();
-        meow.clip = meows[Random.Range(0, meows.Length)];
-        meow.Play();
+        if(Random.Range(0, meowDoration) == 0)
+        {
+            meow.clip = meows[Random.Range(0, meows.Length)];
+            meow.Play();
+        }
+        
         if (editModeObj)
         {
             editModeObj.GetComponent<Animator>().SetTrigger("fade");
