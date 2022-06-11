@@ -1053,10 +1053,15 @@ MonoBehaviour:
   meows:
   - {fileID: 8300000, guid: 54f6edd02e3281447b9aa44744ac1f56, type: 3}
   - {fileID: 8300000, guid: 737dbd14da76f8341bc40e675628d671, type: 3}
+  - {fileID: 8300000, guid: 53085b6a56a46bb44804e0c3df666503, type: 3}
+  - {fileID: 8300000, guid: 87aaeb99ee46db34cad082739f03e49a, type: 3}
+  - {fileID: 8300000, guid: 3d5d19b66ddb000489b8fe70eb94af41, type: 3}
+  - {fileID: 8300000, guid: ff066d8aa6a3c6249aeb4e1aa1342f64, type: 3}
   meow: {fileID: 6583418639341219081}
   bomb: {fileID: 7354043494536191364}
   moan: {fileID: 7354043494536191387}
   winningPortal: {fileID: 7354043494545615510}
+  meowDoration: 3
 --- !u!212 &7354043494536191391
 SpriteRenderer:
   m_ObjectHideFlags: 0

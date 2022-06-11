@@ -134,8 +134,9 @@ public class DragAndDrop : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
+        if(!isActive) return;
         if (!RotateItems.Cur.CompareTag("Wall"))
         {
             RotateItems.Cur = transform;
@@ -147,6 +148,7 @@ public class DragAndDrop : MonoBehaviour
 
     private void OnMouseExit()
     {
+        if (!isActive) return;
         if (RotateItems.Cur == transform && !isDragging)
         {
             RotateItems.NeedToCur = true;
