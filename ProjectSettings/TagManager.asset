@@ -10,6 +10,7 @@ TagManager:
   - Vent
   - Main Music
   - Trash
+  - Music
   layers:
   - Default
   - TransparentFX

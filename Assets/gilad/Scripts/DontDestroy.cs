@@ -7,6 +7,9 @@ namespace gilad.Scripts
         private void Awake()
         {
             GameObject[] obj = GameObject.FindGameObjectsWithTag(gameObject.tag);
+            print(gameObject.tag);
+            print(obj);
+            print(obj.Length);
             if (obj.Length > 1)
             {
                 Destroy(gameObject);
