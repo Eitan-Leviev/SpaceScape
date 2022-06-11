@@ -1300,23 +1300,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1016379027, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 213.88121
+      value: 217.68121
       objectReference: {fileID: 0}
     - target: {fileID: 1149452846, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 213.19997
+      value: 217
       objectReference: {fileID: 0}
     - target: {fileID: 1625539723, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 194
+      value: 193
       objectReference: {fileID: 0}
     - target: {fileID: 1664098493, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 213.19997
+      value: 216.99997
       objectReference: {fileID: 0}
     - target: {fileID: 2144329409, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 172
+      value: 161
       objectReference: {fileID: 0}
     - target: {fileID: 2144329411, guid: 1d9e9e7b211f98b498555e6f20d30d20, type: 3}
       propertyPath: m_Text
