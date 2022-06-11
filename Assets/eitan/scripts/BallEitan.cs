@@ -29,6 +29,8 @@ public class BallEitan : MonoBehaviour
     [SerializeField] private AudioSource meow;
     [SerializeField] private AudioSource bomb;
     [SerializeField] private AudioSource moan;
+    
+    [SerializeField] private AudioSource winningPortal;
 
     private GameObject editModeObj;
     
@@ -109,7 +111,13 @@ public class BallEitan : MonoBehaviour
         {
             // portal anim
             other.gameObject.GetComponent<Animator>().SetTrigger("portal winning");
-            
+            // win sound
+            winningPortal.Play();
+            GameObject.Find("BG").GetComponent<AudioSource>().Play();
+            // moan.Play();
+            // transform.parent.gameObject.GetComponent<AudioSource>().Play();
+            // transform.GetChild(0).gameObject.GetComponent<AudioSource>().Play();
+
             var canvas = GameObject.Find("Canvas");
             canvas.SetActive(false);
             Time.timeScale = 1;
