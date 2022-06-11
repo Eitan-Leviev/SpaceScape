@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using gilad.Scripts;
@@ -29,5 +30,13 @@ public class Scenes : MonoBehaviour
             newName = "Ending";
         }
         SceneManager.LoadScene(newName);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }

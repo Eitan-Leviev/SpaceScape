@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace gilad.Scripts
@@ -16,6 +17,5 @@ namespace gilad.Scripts
             }
             DontDestroyOnLoad(gameObject);
         }
-
     }
 }
