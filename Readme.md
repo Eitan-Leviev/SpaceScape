@@ -4,7 +4,7 @@
   </h1>
 <h3 align="center">  
   
-Play online:
+To play online:
 
   </h1>
 <h3 align="center">  
